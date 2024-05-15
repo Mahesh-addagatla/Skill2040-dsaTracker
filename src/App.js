@@ -6,7 +6,8 @@ import ProblemComponent from './components/ProblemComponent.jsx';
 function App() {
   return (
     <>
-      <ProblemComponent/>
+      <ProblemComponent problemName="Valid Suduko" difficultyLevel="Medium"/>
+      <ProblemComponent problemName="Valid" difficultyLevel="HARD"/>
       
 
     </>

@@ -15,7 +15,7 @@
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.7rem;
+    font-size: 2.3rem;
 }
 .problem-difficulty-indicator{
     
@@ -33,18 +33,29 @@
     font-weight: 400;
     font-style: normal;
     font-size: 1.3rem;
-    margin-right: 5%;
+    margin-right: 3%;
 }
 .problem-rectangle-company-logo{
     width: 30px;
   height:30px;
   clip-path: circle();
+  margin:-1.5% ;
   background-color: white;
-  margin:1%;
+  transition: 0.5s ease-in-out;
 }
+.problem-rectangle-company-logo:hover {
+    transform: scale(1.2);
+    z-index: 1;
+  }
 .problem-rectangle-more-text{
     padding: 0;
     margin: 0;
+}
+.problem-logo-text{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right:5%;
+    margin-bottom: 7%;
 }
 .problem-rectangle-more-text:hover{
     cursor: pointer;
@@ -67,5 +78,5 @@
     font-weight: 400;
     font-style: normal;
     font-size: 1.3rem;
-    margin-left: 5%;
+    margin-left: 3.5%;
 }
