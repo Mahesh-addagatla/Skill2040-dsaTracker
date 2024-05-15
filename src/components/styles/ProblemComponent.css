@@ -49,3 +49,23 @@
 .problem-rectangle-more-text:hover{
     cursor: pointer;
 }
+.GFG-logo-problem-solve-rectangle{
+    margin-left: 1.5rem;
+}
+.problem-completion-indicator{
+    background-color: white;
+    width: 20%;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    margin: 0;
+    padding: 0;
+    border-radius: 0.7rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3rem;
+    margin-left: 5%;
+}
