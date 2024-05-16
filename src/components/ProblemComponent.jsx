@@ -12,6 +12,7 @@ import { IoNewspaperOutline, IoNewspaper } from 'react-icons/io5';
 import { MdAddCircleOutline, MdAddCircle } from "react-icons/md";
 import { FaStar,FaRegStar} from "react-icons/fa";
 import { IoBookmarkOutline,IoBookmark } from "react-icons/io5";
+import { IoIosArrowDown } from "react-icons/io";
 
 
 export default function ProblemComponent({problemName,difficultyLevel}) {
@@ -158,7 +159,7 @@ export default function ProblemComponent({problemName,difficultyLevel}) {
               <IoBookmarkOutline style={{ height: 'auto', width: '35px', cursor: 'pointer'}} />
             }
           </div>
-          <div className='problem-completion-indicator' style={{color:'black'}}>Status</div>
+          <div className='problem-completion-indicator' style={{color:'black'}}>Status<IoIosArrowDown style={{paddingLeft:'5px',cursor:'pointer'}}/></div>
           </div>
     </div>
   );
