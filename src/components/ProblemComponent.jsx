@@ -16,18 +16,18 @@ import { IoIosArrowDown } from "react-icons/io";
 
 
 export default function ProblemComponent({problemName,difficultyLevel}) {
-  const [expanded, setExpanded] = useState(false);
+  // const [expanded, setExpanded] = useState(false);
   const [showText, setShowText] = useState(false);
   const [hoveredSolution, setHoveredSolution] = useState(false);
   const [hoveredAdd, setHoveredAdd] = useState(false);
   const [hoveredStar, setHoveredStar] = useState(false);
   const [hoveredBookMark, setHoveredBookMark] = useState(false);
-  const toggleExpansion = () => {
-    setExpanded(!expanded);
-  };
-  const hideLogos = () => {
-    setExpanded(false);
-  };
+  // const toggleExpansion = () => {
+  //   setExpanded(!expanded);
+  // };
+  // const hideLogos = () => {
+  //   setExpanded(false);
+  // };
   const handleMouseEnterSolution = () => {
     setHoveredSolution(true);
     setShowText(true);
@@ -67,7 +67,7 @@ export default function ProblemComponent({problemName,difficultyLevel}) {
   };
   return (
     <div className='problem-rectangle' >
-      <div style={{display:'flex',justifyContent:'space-between'}}>
+      <div style={{display:'flex',justifyContent:'space-between',marginBottom:'0.5rem'}}>
         <h1 className='problem-rectangle-heading' style={{position:'relative'}}>{problemName}</h1>
         <div className='problem-difficulty-indicator' style={{color:'#E3C525'}}>{difficultyLevel}</div>
       </div>
@@ -79,10 +79,12 @@ export default function ProblemComponent({problemName,difficultyLevel}) {
           <img className="problem-rectangle-company-logo" src={Dell} alt='Telegram'></img>
           <img className="problem-rectangle-company-logo" src={Apple} alt='Apple'></img>
           <img className="problem-rectangle-company-logo" src={Spotify} alt='Spotify'></img>
-        </div>
-          <div style={{display:'flex'}}> 
-          <img className='GFG-logo-problem-solve-rectangle' style={{height:'30px'}} src={GFG} alt='GFG'></img>
-          <img className='GFG-logo-problem-solve-rectangle' style={{height:'40px',marginBottom:'-0.3rem'}} src={LeetCode} alt='LeetCode'></img>
+        </div >
+          <div style={{display:'flex',alignItems:'center'}}> 
+          <div style={{marginRight:'5rem'}}>
+          <img className='GFG-logo-problem-solve-rectangle' style={{height:'30px',cursor:'pointer'}} src={GFG} alt='GFG'></img>
+          <img className='GFG-logo-problem-solve-rectangle' style={{height:'40px',marginBottom:'-0.3rem',cursor:'pointer'}} src={LeetCode} alt='LeetCode'></img>
+          </div>
           {/* <div 
             className="icon-container"
             onMouseEnter={() => setShowText(true)}
@@ -90,7 +92,7 @@ export default function ProblemComponent({problemName,difficultyLevel}) {
             style={{marginLeft:'1rem'}}
           >
             <IoSolutionOutline 
-              style={{ height: 'auto', width: '35px', cursor: 'pointer'}}
+              style={{ height: 'auto', width: '25px', cursor: 'pointer'}}
               title={showText ? "Solution" : ""}
             />
            
@@ -103,12 +105,13 @@ export default function ProblemComponent({problemName,difficultyLevel}) {
               transition: 'transform 0.3s ease-in-out', 
               transform: hoveredSolution ? 'scale(1.1)' : 'scale(1)', 
               display: 'inline-block',
-              marginLeft:'1.5rem'
+              marginLeft:'1rem',
+              marginTop:'0.3rem'
             }}
           >
             {hoveredSolution ? 
-              <IoNewspaper style={{ height: 'auto', width: '35px', cursor: 'pointer'}} title={showText ? "Solution" : ""} /> : 
-              <IoNewspaperOutline style={{ height: 'auto', width: '35px', cursor: 'pointer'}} />
+              <IoNewspaper style={{ height: 'auto', width: '25px', cursor: 'pointer'}} title={showText ? "Solution" : ""} /> : 
+              <IoNewspaperOutline style={{ height: 'auto', width: '25px', cursor: 'pointer'}} />
             }
           </div>
           <div 
@@ -119,12 +122,13 @@ export default function ProblemComponent({problemName,difficultyLevel}) {
               transition: 'transform 0.3s ease-in-out', 
               transform: hoveredAdd ? 'scale(1.1)' : 'scale(1)', 
               display: 'inline-block',
-              marginLeft:'1.5rem'
+              marginLeft:'1rem',
+              marginTop:'0.3rem'
             }}
           >
             {hoveredAdd ? 
-              <MdAddCircle style={{ height: 'auto', width: '35px', cursor: 'pointer'}} title={showText ? "Add Notes" : ""} /> : 
-              <MdAddCircleOutline style={{ height: 'auto', width: '35px', cursor: 'pointer'}} />
+              <MdAddCircle style={{ height: 'auto', width: '25px', cursor: 'pointer'}} title={showText ? "Add Notes" : ""} /> : 
+              <MdAddCircleOutline style={{ height: 'auto', width: '25px', cursor: 'pointer'}} />
             }
           </div>
           <div 
@@ -135,12 +139,13 @@ export default function ProblemComponent({problemName,difficultyLevel}) {
               transition: 'transform 0.3s ease-in-out', 
               transform: hoveredStar ? 'scale(1.1)' : 'scale(1)', 
               display: 'inline-block',
-              marginLeft:'1.5rem'
+              marginLeft:'1rem',
+              marginTop:'0.3rem'
             }}
           >
             {hoveredStar ? 
-              <FaStar style={{ height: 'auto', width: '35px', cursor: 'pointer'}} title={showText ? "Add to Favourites" : ""} /> : 
-              <FaRegStar style={{ height: 'auto', width: '35px', cursor: 'pointer'}} />
+              <FaStar style={{ height: 'auto', width: '25px', cursor: 'pointer'}} title={showText ? "Add to Favourites" : ""} /> : 
+              <FaRegStar style={{ height: 'auto', width: '25px', cursor: 'pointer'}} />
             }
           </div>
           <div 
@@ -151,12 +156,13 @@ export default function ProblemComponent({problemName,difficultyLevel}) {
               transition: 'transform 0.3s ease-in-out', 
               transform: hoveredBookMark ? 'scale(1.1)' : 'scale(1)', 
               display: 'inline-block',
-              marginLeft:'1.5rem'
+              marginLeft:'1rem',
+              marginTop:'0.3rem'
             }}
           >
             {hoveredBookMark ? 
-              <IoBookmark style={{ height: 'auto', width: '35px', cursor: 'pointer'}} title={showText ? "Bookmark" : ""} /> : 
-              <IoBookmarkOutline style={{ height: 'auto', width: '35px', cursor: 'pointer'}} />
+              <IoBookmark style={{ height: 'auto', width: '25px', cursor: 'pointer'}} title={showText ? "Bookmark" : ""} /> : 
+              <IoBookmarkOutline style={{ height: 'auto', width: '25px', cursor: 'pointer'}} />
             }
           </div>
           <div className='problem-completion-indicator' style={{color:'black'}}>Status<IoIosArrowDown style={{paddingLeft:'5px',cursor:'pointer'}}/></div>

@@ -7,11 +7,11 @@ function App() {
   return (
     <>
       <ProblemComponent problemName="Valid Suduko" difficultyLevel="Medium"/>
-      <ProblemComponent problemName="Kadanes alogo" difficultyLevel="HARD"/>     
-      <ProblemComponent problemName="Grid Search" difficultyLevel="HARD"/>
-      <ProblemComponent problemName="Reverse LinkedList" difficultyLevel="HARD"/>
-      <ProblemComponent problemName="Peak Element" difficultyLevel="HARD"/>
-      <ProblemComponent problemName="Valid" difficultyLevel="HARD"/>
+      <ProblemComponent problemName="Kadanes alogo" difficultyLevel="Hard"/>     
+      <ProblemComponent problemName="Grid Search" difficultyLevel="Hard"/>
+      <ProblemComponent problemName="Reverse LinkedList" difficultyLevel="Hard"/>
+      <ProblemComponent problemName="Peak Element" difficultyLevel="Hard"/>
+      <ProblemComponent problemName="Valid" difficultyLevel="Hard"/>
 
       
 
