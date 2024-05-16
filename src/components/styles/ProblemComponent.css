@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anta&family=Archivo:ital,wght@0,100..900;1,100..900&family=Kanit&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@400;500&display=swap');
 .problem-rectangle{
-    height:200px;
+    height:170px;
     width:35%;
     background-color: #A1E5CD;
     border: 1px solid black;
@@ -8,6 +8,7 @@
     padding:0;
     margin: 1rem;
     padding-top: 0.8rem;
+    
 }
 .problem-rectangle-heading{
     margin-top: 0;
@@ -15,7 +16,7 @@
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 2.3rem;
+    font-size: 1.7rem;
 }
 .problem-difficulty-indicator{
     
@@ -55,7 +56,7 @@
     display: flex;
     flex-direction: row-reverse;
     margin-right:5%;
-    margin-bottom: 7%;
+    margin-bottom: 5%;
 }
 .problem-rectangle-more-text:hover{
     cursor: pointer;
