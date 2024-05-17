@@ -49,7 +49,7 @@ function App() {
           ></Route>
         </Routes>
       </Router>
-      <CodeBlock language="java" value={codeString} />
+      {/* <CodeBlock language="java" value={codeString} /> */}
     </>
   );
 }
