@@ -3,6 +3,7 @@ import "./App.css";
 // import ProblemComponent from "./components/ProblemComponent.jsx";
 import SolutionPage from "./pages/SolutionPage.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProblemsList from "./pages/ProblemsList.jsx";
 import CodeBlock from "./components/CodeBlock.jsx";
 
 const codeString = `
@@ -32,8 +33,8 @@ class Solution{
 function App() {
   return (
     <>
-      {/* <ProblemComponent problemName="Valid Suduko" difficultyLevel="Medium" />
-      <ProblemComponent problemName="Kadanes alogo" difficultyLevel="Hard" />
+      {/* <ProblemComponent problemName="Valid Suduko" difficultyLevel="Medium" /> */}
+      {/* <ProblemComponent problemName="Kadanes alogo" difficultyLevel="Hard" />
       <ProblemComponent problemName="Grid Search" difficultyLevel="Hard" />
       <ProblemComponent
         problemName="Reverse LinkedList"
@@ -49,6 +50,7 @@ function App() {
           ></Route>
         </Routes>
       </Router>
+      <ProblemsList />
       {/* <CodeBlock language="java" value={codeString} /> */}
     </>
   );

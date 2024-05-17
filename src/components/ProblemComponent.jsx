@@ -14,7 +14,11 @@ import { FaStar, FaRegStar } from "react-icons/fa";
 import { IoBookmarkOutline, IoBookmark } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 
-export default function ProblemComponent({ problemName, difficultyLevel }) {
+export default function ProblemComponent({
+  problemName,
+  difficultyLevel,
+  URL,
+}) {
   // const [expanded, setExpanded] = useState(false);
   const [showText, setShowText] = useState(false);
   const [hoveredSolution, setHoveredSolution] = useState(false);
@@ -121,12 +125,14 @@ export default function ProblemComponent({ problemName, difficultyLevel }) {
       </div>
       <div style={{ display: "flex", alignItems: "center" }}>
         <div style={{ marginRight: "5rem" }}>
-          <img
-            className="GFG-logo-problem-solve-rectangle"
-            style={{ height: "30px", cursor: "pointer" }}
-            src={GFG}
-            alt="GFG"
-          ></img>
+          <a href={URL} target="_blank" rel="noopener noreferrer">
+            <img
+              className="GFG-logo-problem-solve-rectangle"
+              style={{ height: "30px", cursor: "pointer" }}
+              src={GFG}
+              alt="GFG"
+            ></img>
+          </a>
           <img
             className="GFG-logo-problem-solve-rectangle"
             style={{
