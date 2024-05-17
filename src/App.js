@@ -33,15 +33,6 @@ class Solution{
 function App() {
   return (
     <>
-      {/* <ProblemComponent problemName="Valid Suduko" difficultyLevel="Medium" /> */}
-      {/* <ProblemComponent problemName="Kadanes alogo" difficultyLevel="Hard" />
-      <ProblemComponent problemName="Grid Search" difficultyLevel="Hard" />
-      <ProblemComponent
-        problemName="Reverse LinkedList"
-        difficultyLevel="Hard"
-      />
-      <ProblemComponent problemName="Peak Element" difficultyLevel="Hard" />
-      <ProblemComponent problemName="Valid" difficultyLevel="Hard" /> */}
       <Router>
         <Routes>
           <Route
