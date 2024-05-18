@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Archivo:ital,wght@0,100..900;1,100..900&family=Kanit&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@400;500;700&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap");
+
+.DSA-problems-pagination {
+  display: flex;
+  /* justify-content: center; */
+  margin-top: 20px;
+  flex-wrap: wrap;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+}
+.DSA-problems-pagination-button {
+  background-color: none;
+  /* border: 1px solid #ccc; */
+  /* color: #333; */
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-family: "Radio Canada Big", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: grey;
+}
+.DSA-problems-pagination-button:hover {
+  background-color: #bcffe9;
+  color: black;
+}
+.DSA-problems-pagination-button:disabled {
+  background-color: #bcffe9;
+  color: black;
+  /* cursor: not-allowed; */
+  /* border: 1px solid #aaa; */
+}
+
+.DSA-problems-pagination-director {
+  margin: 0.6rem 0.6rem;
+  background-color: white;
+  border: 0px;
+}
+.DSA-problems-pagination-director:hover {
+  cursor: pointer;
+  /* background-color: aliceblue; */
+}
+/* .DSA-problems-pagination
+
+.DSA-problems-pagination */
