@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles/SolutionPage.css";
+import SolutionCode from "./SolutionCode";
 
 export default function SolutionPage({ problemName }) {
   return (
@@ -39,6 +40,7 @@ export default function SolutionPage({ problemName }) {
         ultricies nec, pellentesque eu, pretium quis, sem.
       </p>
       <h1 className="solution-page-problem-sub-heading">Implementation:</h1>
+      <SolutionCode/>
     </div>
   );
 }
