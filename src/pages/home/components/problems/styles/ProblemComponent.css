@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Archivo:ital,wght@0,100..900;1,100..900&family=Kanit&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@400;500&display=swap');
+.problem-rectangle{
+    height:170px;
+    width:35%;
+    background-color: #A1E5CD;
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding:0;
+    margin: 1rem;
+    padding-top: 0.8rem;
+    
+}
+.problem-rectangle-heading{
+    margin-top: 0;
+    margin-left: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.7rem;
+}
+.problem-difficulty-indicator{
+    
+    background-color: white;
+    width: 25%;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    margin: 0;
+    padding: 0;
+    border-radius: 0.7rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3rem;
+    margin-right: 3%;
+}
+.problem-rectangle-company-logo{
+    width: 30px;
+  height:30px;
+  clip-path: circle();
+  margin:-1.5% ;
+  background-color: white;
+  transition: 0.5s ease-in-out;
+}
+.problem-rectangle-company-logo:hover {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+.problem-rectangle-more-text{
+    padding: 0;
+    margin: 0;
+}
+.problem-logo-text{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right:5%;
+    margin-bottom: 5%;
+}
+.problem-rectangle-more-text:hover{
+    cursor: pointer;
+}
+.GFG-logo-problem-solve-rectangle{
+    margin-left: 1.5rem;
+}
+.problem-completion-indicator{
+    background-color: white;
+    width: 20%;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    margin: 0;
+    padding: 0;
+    border-radius: 0.7rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3rem;
+    margin-left: 3.5%;
+}

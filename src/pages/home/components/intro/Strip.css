@@ -1,0 +1,27 @@
+.strip{
+    display: flex;
+    flex-direction: row;
+    position:relative;
+    left:-4rem;
+}
+.strip-1{
+    width:0.6rem;
+    height:7rem;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    margin-left:0.5rem;
+}
+.strip-2{
+    width:0.6rem;
+    height:8.5rem;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    margin-left:0.5rem;
+}
+.strip-3{
+    width:0.6rem;
+    height:10rem;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    margin-left:0.5rem
+}

@@ -1,0 +1,62 @@
+.topicsComponent .eachTopic {
+    background: #ECECEC;
+    padding: 0.4rem 1rem;
+    border-radius: 1.4rem;
+    font-size: 1.05rem;
+    margin: 0.2rem;
+    transition: 0.5s;
+    cursor: pointer;
+
+}
+
+.topicsComponent .eachTopic:hover {
+    background: #ECECEC;
+    transition: 0.5s;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.topicsComponent {
+    border: 1.5px solid #ECECEC;
+    border-radius: 2rem;
+    height: 50vh;
+    width: 25vw;
+    padding-bottom: 2vh;
+}
+
+.topicsComponent .available-topics,
+.topicsComponent .selected {
+    padding: 0.5rem 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.topicsComponent .selected .eachTopic {
+    border: 1px solid rgb(208, 208, 208);
+}
+
+.topicsComponent .selected {
+    margin-bottom: 0.5rem;
+}
+
+.topicsComponent .header {
+    height: 6vh;
+    background: #ECECEC;
+    padding: 0.3rem 1.2rem;
+    font-size: 1.55rem;
+    display: flex;
+    font-weight: 550;
+    align-items: center;
+    justify-content: center;
+    color: rgb(65, 64, 64);
+    font-size: 1.8rem;
+    border-radius: 2rem;
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
