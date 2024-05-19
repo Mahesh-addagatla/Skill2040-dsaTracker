@@ -1,5 +1,10 @@
 .problems {
     display: grid;
     grid-template-columns: 70% 30%;
-    padding: 0 4vw;
+    padding: 0 10vw;
+    margin-top: 5vh;
+}
+
+.problemsandStatus {
+    padding: 0 3vw;
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import topicsData from './data';
 import './style.css';
 
-function Topics() {
+function Difficulty() {
     const [availableTopics, setAvailableTopics] = useState(topicsData);
     const [selectedTopics, setSelectedTopics] = useState([]);
 
@@ -17,7 +17,7 @@ function Topics() {
     };
 
     return (
-        <div className="topicsComponent">
+        <div className="difficulty">
             <div className="header">
                 <p>Topics</p>
             </div>
@@ -39,4 +39,4 @@ function Topics() {
     );
 }
 
-export default Topics;
+export default Difficulty;

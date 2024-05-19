@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import './App.css';
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home';
@@ -11,7 +10,6 @@ function App() {
       <Router>
 
         <Routes>
-          <Route path="/auth" element={<Auth />} />
           <Route path="/" element={<Home />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
