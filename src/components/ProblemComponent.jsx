@@ -123,20 +123,24 @@ export default function ProblemComponent({
           alt="Spotify"
         ></img>
       </div>
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <div style={{ marginRight: "5rem" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <div className="problem-rectangle-solve-problem-container">
           <a href={URL} target="_blank" rel="noopener noreferrer">
             <img
               className="GFG-logo-problem-solve-rectangle"
-              style={{ height: "30px", cursor: "pointer" }}
+              style={{ cursor: "pointer" }}
               src={GFG}
               alt="GFG"
             ></img>
           </a>
           <img
-            className="GFG-logo-problem-solve-rectangle"
+            className="leetcode-logo-problem-solve-rectangle"
             style={{
-              height: "40px",
               marginBottom: "-0.3rem",
               cursor: "pointer",
             }}
