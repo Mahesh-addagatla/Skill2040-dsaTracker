@@ -1,8 +1,10 @@
 import React from "react";
 import Progress from "@ramonak/react-progress-bar";
 import "./ProgressBar.css";
-
+import useSound from 'use-sound';
+import loud_btn from '../sounds/buttonClick.mp3';
 const ProgressBar = () => {
+  const [play] = useSound(loud_btn);
   return (
     <div className="progress-bar">
       <Progress
@@ -12,7 +14,8 @@ const ProgressBar = () => {
         bgColor="#61D8AD"
       />
       <div class="container-showTag">
-        <input type="checkbox" id="cbx2" style={{ display: "none" }} />
+        <input type="checkbox" id="cbx2" style={{ display: "none" }}
+          onChange={play} />
         <label for="cbx2" class="check">
           <svg width="18px" height="18px" viewBox="0 0 18 18">
             <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>

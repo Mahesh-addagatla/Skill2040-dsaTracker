@@ -8,11 +8,11 @@ import Dell from './styles/Dell.png';
 import Spotify from './styles/Spotify.png';
 import LeetCode from './styles/LeetCode.png';
 import GFG from './styles/GFG.svg';
-// import { IoNewspaperOutline, IoNewspaper } from 'react-icons/io5';
-// import { MdAddCircleOutline, MdAddCircle } from "react-icons/md";
-// import { FaStar, FaRegStar } from "react-icons/fa";
-// import { IoBookmarkOutline, IoBookmark } from "react-icons/io5";
-// import { IoIosArrowDown } from "react-icons/io";
+import { IoNewspaperOutline, IoNewspaper } from 'react-icons/io5';
+import { MdAddCircleOutline, MdAddCircle } from "react-icons/md";
+import { FaStar, FaRegStar } from "react-icons/fa";
+import { IoBookmarkOutline, IoBookmark } from "react-icons/io5";
+import { IoIosArrowDown } from "react-icons/io";
 
 
 export default function ProblemComponent({ problemName, difficultyLevel }) {
@@ -80,8 +80,8 @@ export default function ProblemComponent({ problemName, difficultyLevel }) {
         <img className="problem-rectangle-company-logo" src={Apple} alt='Apple'></img>
         <img className="problem-rectangle-company-logo" src={Spotify} alt='Spotify'></img>
       </div >
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <div style={{ marginRight: '5rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div>
           <img className='GFG-logo-problem-solve-rectangle' style={{ height: '30px', cursor: 'pointer' }} src={GFG} alt='GFG'></img>
           <img className='GFG-logo-problem-solve-rectangle' style={{ height: '40px', marginBottom: '-0.3rem', cursor: 'pointer' }} src={LeetCode} alt='LeetCode'></img>
         </div>
@@ -109,10 +109,10 @@ export default function ProblemComponent({ problemName, difficultyLevel }) {
             marginTop: '0.3rem'
           }}
         >
-          {/* {hoveredSolution ?
+          {hoveredSolution ?
             <IoNewspaper style={{ height: 'auto', width: '25px', cursor: 'pointer' }} title={showText ? "Solution" : ""} /> :
             <IoNewspaperOutline style={{ height: 'auto', width: '25px', cursor: 'pointer' }} />
-          } */}
+          }
         </div>
         <div
           className="icon-container"
@@ -126,10 +126,10 @@ export default function ProblemComponent({ problemName, difficultyLevel }) {
             marginTop: '0.3rem'
           }}
         >
-          {/* {hoveredAdd ?
+          {hoveredAdd ?
             <MdAddCircle style={{ height: 'auto', width: '25px', cursor: 'pointer' }} title={showText ? "Add Notes" : ""} /> :
             <MdAddCircleOutline style={{ height: 'auto', width: '25px', cursor: 'pointer' }} />
-          } */}
+          }
         </div>
         <div
           className="icon-container"
@@ -143,10 +143,10 @@ export default function ProblemComponent({ problemName, difficultyLevel }) {
             marginTop: '0.3rem'
           }}
         >
-          {/* {hoveredStar ?
-            // <FaStar style={{ height: 'auto', width: '25px', cursor: 'pointer' }} title={showText ? "Add to Favourites" : ""} /> :
-            // <FaRegStar style={{ height: 'auto', width: '25px', cursor: 'pointer' }} />
-          } */}
+          {hoveredStar ?
+            <FaStar style={{ height: 'auto', width: '25px', cursor: 'pointer' }} title={showText ? "Add to Favourites" : ""} /> :
+            <FaRegStar style={{ height: 'auto', width: '25px', cursor: 'pointer' }} />
+          }
         </div>
         <div
           className="icon-container"
@@ -160,12 +160,12 @@ export default function ProblemComponent({ problemName, difficultyLevel }) {
             marginTop: '0.3rem'
           }}
         >
-          {/* {hoveredBookMark ?
+          {hoveredBookMark ?
             <IoBookmark style={{ height: 'auto', width: '25px', cursor: 'pointer' }} title={showText ? "Bookmark" : ""} /> :
             <IoBookmarkOutline style={{ height: 'auto', width: '25px', cursor: 'pointer' }} />
-          } */}
+          }
         </div>
-        {/* <div className='problem-completion-indicator' style={{ color: 'black' }}>Status<IoIosArrowDown style={{ paddingLeft: '5px', cursor: 'pointer' }} /></div> */}
+        <div className='problem-completion-indicator' style={{ color: 'black' }}>Status<IoIosArrowDown style={{ paddingLeft: '5px', cursor: 'pointer' }} /></div>
       </div>
     </div>
   );
