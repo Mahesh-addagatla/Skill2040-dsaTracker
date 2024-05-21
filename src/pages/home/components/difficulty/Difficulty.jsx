@@ -24,7 +24,7 @@ function Difficulty() {
     return (
         <div className="difficulty">
             <div className="header">
-                <p>Topics</p>
+                <p>Difficulty</p>
             </div>
             <div className='topics'>            <div className="selected">
                 {selectedTopics.map((topic, index) => (

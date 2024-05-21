@@ -36,12 +36,12 @@ function Nav() {
                         </li>
                         <li className='dropdown'>
                             <Link to={clientUrl} onClick={play}>
-                                Services
+                                LeaderBoard
                             </Link>
                         </li>
                         <li className='dropdown'>
                             <Link to={clientUrl} onClick={play}>
-                                CaseStudies
+                                Contact
                             </Link>
                         </li>
 
