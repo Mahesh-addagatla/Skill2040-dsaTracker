@@ -1,0 +1,67 @@
+.navbar-container {
+    position: fixed;
+    top: 0vh;
+    border-bottom: 1.5px solid rgb(186, 185, 185);
+    padding: 1vw 0;
+    display: flex;
+    justify-content: center;
+    height: 5.5vh;
+    width: 100%;
+
+}
+
+.navbar-container .NavContainer {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-container .NavContainer nav {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.navbar-container .NavContainer li {
+    list-style-type: none;
+    font-size: 1.15rem;
+}
+
+.navbar-container .NavContainer li a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+
+.navbar-container .NavContainer .logo,
+.navbar-container .NavContainer .profile {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-container .NavContainer .logo img {
+    height: 6vh;
+    width: 4vw;
+    margin-right: 0.5vw;
+}
+
+.navbar-container .NavContainer .logo h4 {
+    font-size: 1.4rem;
+    font-weight: 550;
+}
+
+.navbar-container .NavContainer .profile {
+    cursor: pointer;
+}
+
+.navbar-container .NavContainer .profile .name {
+    font-size: 1.3rem;
+}
+
+.navbar-container .NavContainer .profile img {
+    height: 5vh;
+    width: 2.5vw;
+    border-radius: 50%;
+    margin-left: 0.5vw;
+}
