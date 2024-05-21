@@ -4,14 +4,6 @@
   align-items: center;
 }
 
-.input-showtag {
-  margin-left: 3rem;
-}
-
-.container-showTag {
-  margin-left: 5rem;
-}
-
 .check {
   cursor: pointer;
   position: relative;
@@ -20,6 +12,7 @@
   height: 24px;
   -webkit-tap-highlight-color: transparent;
   transform: translate3d(0, 0, 0);
+  margin-left: -10vw;
 }
 
 .check:before {

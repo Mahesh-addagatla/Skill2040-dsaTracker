@@ -7,11 +7,12 @@
     justify-content: center;
     height: 5.5vh;
     width: 100%;
-
+    background: #fff;
+    z-index: 10000;
 }
 
 .navbar-container .NavContainer {
-    width: 75%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,7 +26,7 @@
 
 .navbar-container .NavContainer li {
     list-style-type: none;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
 }
 
 .navbar-container .NavContainer li a {

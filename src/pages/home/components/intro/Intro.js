@@ -7,7 +7,7 @@ import Strip from "./Strip";
 
 const Intro = () => {
   return (
-    <div className="hero-section">
+    <div className="intro">    <div className="hero-section">
       <div className="hero-content">
         <div className="dsa-photo-1">
           <img src={photo1} alt="programming"></img>
@@ -54,6 +54,8 @@ const Intro = () => {
         </div>
       </div>
     </div >
+    </div>
+
   );
 };
 

@@ -1,10 +1,17 @@
+.intro {
+    width: 100%;
+
+    border-bottom: 2px dashed rgb(185, 194, 190);
+}
+
 .hero-content {
     display: flex;
     justify-content: center;
-    border-bottom: 2px dashed rgb(185, 194, 190);
+    width: 50%;
     height: 30vh;
     align-items: center;
     padding-bottom: 2vh;
+    margin: 0 auto;
 }
 
 .dsa-photo-1 img {
@@ -14,7 +21,7 @@
 }
 
 .dsa-content {
-    margin: 0 4rem;
+    margin: 0 2vw;
 
 }
 
@@ -31,7 +38,7 @@
 .dsa-description {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1rem;
-    width: 40vw;
+    width: 38vw;
     text-align: justify;
 
 }

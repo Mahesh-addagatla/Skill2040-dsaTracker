@@ -1,5 +1,5 @@
 import React from 'react';
-import ProblemComponent from '../components/problems/ProblemComponent';
+import ProblemsList from '../components/problems/ProblemList';
 import Topics from '../components/topics/Topics';
 import './style.css'
 import Difficulty from '../components/difficulty/Difficulty';
@@ -10,7 +10,7 @@ const Problems = () => {
         <div className='problems'>
             <div className="problemsandStatus">
                 <ProgressBar />
-                <ProblemComponent />
+                <ProblemsList />
             </div>
             <div className="topics">
                 <Topics />
