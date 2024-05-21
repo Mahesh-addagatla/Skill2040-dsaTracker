@@ -95,6 +95,36 @@
   font-size: 1.3rem;
   margin-left: 3.5%;
 }
+
+.problem-component-IoNewspaper {
+  width: 25px;
+  height: auto;
+  cursor: pointer;
+}
+.problem-component-IoNewspaperOutline {
+  width: 25px;
+  height: auto;
+  cursor: pointer;
+}
+.problem-component-MdAddCircle {
+  width: 25px;
+  height: auto;
+  cursor: pointer;
+}
+.problem-component-FaStar {
+  width: 25px;
+  height: auto;
+  cursor: pointer;
+}
+.problem-component-IoBookmark {
+  width: 25px;
+  height: auto;
+  cursor: pointer;
+}
+.problem-component-IoIosArrowDown {
+  padding-left: 5px;
+  cursor: pointer;
+}
 @media (max-width: 700px) {
   .problem-rectangle {
     width: 90%;

@@ -149,7 +149,7 @@ export default function ProblemComponent({
           ></img>
         </div>
         {/* <div 
-            className="icon-container"
+            className="problem-component-icon-container"
             onMouseEnter={() => setShowText(true)}
             onMouseLeave={() => setShowText(false)}
             style={{marginLeft:'1rem'}}
@@ -161,7 +161,7 @@ export default function ProblemComponent({
            
           </div> */}
         <div
-          className="icon-container"
+          className="problem-component-icon-container"
           onMouseEnter={handleMouseEnterSolution}
           onMouseLeave={handleMouseLeaveSolution}
           style={{
@@ -174,17 +174,19 @@ export default function ProblemComponent({
         >
           {hoveredSolution ? (
             <IoNewspaper
-              style={{ height: "auto", width: "25px", cursor: "pointer" }}
+              className="problem-component-IoNewspaper"
+              // style={{ height: "auto", width: "25px", cursor: "pointer" }}
               title={showText ? "Solution" : ""}
             />
           ) : (
             <IoNewspaperOutline
-              style={{ height: "auto", width: "25px", cursor: "pointer" }}
+              className="problem-component-IoNewspaperOutline"
+              //style={{ height: "auto", width: "25px", cursor: "pointer" }}
             />
           )}
         </div>
         <div
-          className="icon-container"
+          className="problem-component-icon-container"
           onMouseEnter={handleMouseEnterAdd}
           onMouseLeave={handleMouseLeaveAdd}
           style={{
@@ -197,17 +199,19 @@ export default function ProblemComponent({
         >
           {hoveredAdd ? (
             <MdAddCircle
-              style={{ height: "auto", width: "25px", cursor: "pointer" }}
+              className="problem-component-MdAddCircle"
+              //style={{ height: "auto", width: "25px", cursor: "pointer" }}
               title={showText ? "Add Notes" : ""}
             />
           ) : (
             <MdAddCircleOutline
-              style={{ height: "auto", width: "25px", cursor: "pointer" }}
+              className="problem-component-MdAddCircle"
+              //style={{ height: "auto", width: "25px", cursor: "pointer" }}
             />
           )}
         </div>
         <div
-          className="icon-container"
+          className="problem-component-icon-container"
           onMouseEnter={handleMouseEnterStar}
           onMouseLeave={handleMouseLeaveStar}
           style={{
@@ -220,17 +224,19 @@ export default function ProblemComponent({
         >
           {hoveredStar ? (
             <FaStar
-              style={{ height: "auto", width: "25px", cursor: "pointer" }}
+              className="problem-component-FaStar"
+              //style={{ height: "auto", width: "25px", cursor: "pointer" }}
               title={showText ? "Add to Favourites" : ""}
             />
           ) : (
             <FaRegStar
-              style={{ height: "auto", width: "25px", cursor: "pointer" }}
+              className="problem-component-FaStar"
+              //style={{ height: "auto", width: "25px", cursor: "pointer" }}
             />
           )}
         </div>
         <div
-          className="icon-container"
+          className="problem-component-icon-container"
           onMouseEnter={handleMouseEnterBookMark}
           onMouseLeave={handleMouseLeaveBookMark}
           style={{
@@ -243,12 +249,14 @@ export default function ProblemComponent({
         >
           {hoveredBookMark ? (
             <IoBookmark
-              style={{ height: "auto", width: "25px", cursor: "pointer" }}
+              className="problem-component-IoBookmark"
+              //style={{ height: "auto", width: "25px", cursor: "pointer" }}
               title={showText ? "Bookmark" : ""}
             />
           ) : (
             <IoBookmarkOutline
-              style={{ height: "auto", width: "25px", cursor: "pointer" }}
+              className="problem-component-IoBookmark"
+              //style={{ height: "auto", width: "25px", cursor: "pointer" }}
             />
           )}
         </div>
@@ -257,7 +265,10 @@ export default function ProblemComponent({
           style={{ color: "black" }}
         >
           Status
-          <IoIosArrowDown style={{ paddingLeft: "5px", cursor: "pointer" }} />
+          <IoIosArrowDown
+            className="problem-component-IoIosArrowDown"
+            //style={{ paddingLeft: "5px", cursor: "pointer" }}
+          />
         </div>
       </div>
     </div>
