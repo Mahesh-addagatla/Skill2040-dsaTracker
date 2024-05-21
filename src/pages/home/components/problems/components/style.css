@@ -104,7 +104,8 @@
     font-weight: 400;
     font-style: normal;
     font-size: 1.3rem;
-    margin-left: 3.5%;
+    margin-left: 7vw;
+    padding-left: 2vw;
 }
 
 .problem-component-IoNewspaper {
@@ -138,7 +139,6 @@
 }
 
 .problem-component-IoIosArrowDown {
-    padding-left: 5px;
     cursor: pointer;
 }
 
