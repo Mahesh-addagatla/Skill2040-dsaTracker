@@ -80,6 +80,10 @@ export default function ProblemsList() {
 
   return (
     <div>
+      <div className="Topics">
+        <span>Arrays</span>
+        <i className="fa-solid fa-caret-down"></i>
+      </div>
       {currentProblems.map((problem) => (
         <ProblemComponent
           key={problem._id}

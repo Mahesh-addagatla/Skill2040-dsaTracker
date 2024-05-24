@@ -10,7 +10,7 @@ const ProgressBar = () => {
       <Progress
         completed={60}
         width="30vw"
-        height="2.5vh"
+        height="2.7vh"
         bgColor="#85d1b5"
       />
       <div class="container-showTag">
