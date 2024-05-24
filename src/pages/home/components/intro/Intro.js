@@ -1,7 +1,7 @@
 import React from "react";
 import "./Intro.css";
 import photo1 from "./Programmer.gif";
-import photo2 from "./Telecommuting.gif";
+import photo2 from "./about1.jpg";
 import code from "./coding.png";
 import Strip from "./Strip";
 
@@ -12,27 +12,14 @@ const Intro = () => {
         <div className="dsa-photo-1">
           <img src={photo1} alt="programming"></img>
           <br />
-          <span style={{ position: "relative", top: "-2rem" }}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              xmlSpace="preserve"
-              width="2rem"
-              height="2rem"
-              viewBox="0 0 490 490"
-              fill="#61D8AD"
-            >
-              <circle cx={245} cy={122.5} r={102.187} />
-              <circle cx={387.814} cy={367.5} r={102.187} />
-              <circle cx={102.187} cy={367.5} r={102.187} />
-            </svg>
-          </span>
+
         </div>
         <div className="dsa-content">
           <div className="dsa-description">
             <h2>Our DSA Sheet             <img
               src={code}
               alt="code"
-              style={{ marginLeft: "2rem", height: "4rem", width: "4rem" }}
+              style={{ marginLeft: "2rem", height: "3rem", width: "4rem" }}
             /></h2>
 
             <p>
