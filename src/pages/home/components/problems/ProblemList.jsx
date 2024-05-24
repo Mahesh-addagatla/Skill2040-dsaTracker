@@ -6,29 +6,44 @@ import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 export default function ProblemsList() {
   const [problems, setProblems] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const problemsPerPage = 10;
   const maxPageNumbersToShow = 5;
-
-  useEffect(() => {
-    // Simulating an API call
-    const fetchData = async () => {
-      const response = await fetch(
-        "https://dsa-tracker-backend-jxg.vercel.app/home"
-      );
+  const fetchData = async () => {
+    try {
+      const response = await fetch("https://dsa-tracker-backend-jxg.vercel.app/home", {
+        method: 'GET'
+      });
+      if (!response.ok) {
+        throw new Error('Failed to fetch');
+      }
       const data = await response.json();
-      setProblems(data.questions); // Assuming 'questions' is the key in your JSON object
-    };
+      console.log(data.result);
+      setProblems(data.result);
+      setLoading(false);
+    } catch (error) {
+      console.error('Fetch error:', error);
+      setError(error);
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
 
     fetchData();
   }, []);
 
-  // Calculate the indices for slicing the problems array
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
   const indexOfLastProblem = currentPage * problemsPerPage;
   const indexOfFirstProblem = indexOfLastProblem - problemsPerPage;
-  const currentProblems = problems.slice(
-    indexOfFirstProblem,
-    indexOfLastProblem
-  );
+  const currentProblems = problems.slice(indexOfFirstProblem, indexOfLastProblem);
 
   // Calculate total pages
   const totalPages = Math.ceil(problems.length / problemsPerPage);
