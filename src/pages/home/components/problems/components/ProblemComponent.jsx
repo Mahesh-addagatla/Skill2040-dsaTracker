@@ -83,6 +83,39 @@ export default function ProblemComponent({
         Revision: "rgb(221, 221, 57)",
         Unsolved: "rgb(243, 55, 55)",
     };
+
+    let backgroundColor;
+    console.log(difficultyLevel)
+
+    // Set the background color based on the difficulty level
+    if (difficultyLevel === 'Easy') {
+        backgroundColor = '#a1e5cd';
+    } else if (difficultyLevel === 'Medium') {
+        backgroundColor = '#FBEDA6';
+    } else if (difficultyLevel === 'Hard') {
+        backgroundColor = '#F3A8A8';
+    }
+
+    // Style object for the main div
+    const mainDivStyle = {
+        backgroundColor: backgroundColor,
+        // Add any other styles you may need
+    };
+
+    if (difficultyLevel === 'Easy') {
+        backgroundColor = '#a1e5cd';
+    } else if (difficultyLevel === 'Medium') {
+        backgroundColor = '#FBEDA6';
+    } else if (difficultyLevel === 'Hard') {
+        backgroundColor = '#F3A8A8';
+    }
+
+    // Style object for the main div
+    const DifficultyColor = {
+        color: backgroundColor,
+        // Add any other styles you may need
+    };
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             const dropdownMenu = document.querySelector(
@@ -101,7 +134,7 @@ export default function ProblemComponent({
     }, []);
 
     return (
-        <div className="problem-rectangle">
+        <div className="problem-rectangle" style={mainDivStyle}>
             <div
             >
                 <h1
@@ -111,7 +144,7 @@ export default function ProblemComponent({
                 </h1>
                 <div
                     className="problem-difficulty-indicator"
-                    style={{ color: "#E3C525" }}
+
                 >
                     {difficultyLevel}
                 </div>

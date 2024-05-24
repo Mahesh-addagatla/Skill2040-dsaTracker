@@ -1,22 +1,5 @@
 const topics = [
-    "Arrays",
-    "Matrix",
-    "Stack",
-    "Queue",
-    "Linked List",
-    "Doubly Linked List",
-    "Binary Tree",
-    "Binary Search Tree",
-    "Heap",
-    "Hashing",
-    "Graph",
-    "Trie",
-    "AVL Tree",
-    "Red-Black Tree",
-    "B Tree",
-    "B+ Tree",
-    "Skip List",
-    "Segment Tree",
-    "Fenwick Tree (Binary Indexed Tree)"
+    "Array", "String", "Stacks & Queues", "Matrix", "LinkedList", "Searching & Sorting", "Bit Manipulation", "Binary Trees", "Binary Search Trees", "Greedy", "Heap", "BackTracking", "Dynamic Programming", "Graph",
+    "Trie"
 ];
 export default topics;

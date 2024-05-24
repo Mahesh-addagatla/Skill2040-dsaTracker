@@ -13,7 +13,7 @@ export default function ProblemsList() {
     // Simulating an API call
     const fetchData = async () => {
       const response = await fetch(
-        "https://dsa-tracker-backend-gvt0.onrender.com/home"
+        "https://dsa-tracker-backend-jxg.vercel.app/home"
       );
       const data = await response.json();
       setProblems(data.questions); // Assuming 'questions' is the key in your JSON object
@@ -81,7 +81,7 @@ export default function ProblemsList() {
   return (
     <div>
       <div className="Topics">
-        <span>Arrays</span>
+        <span>Array</span>
         <i className="fa-solid fa-caret-down"></i>
       </div>
       {currentProblems.map((problem) => (
