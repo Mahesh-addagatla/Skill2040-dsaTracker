@@ -1,15 +1,15 @@
-// ProblemsList.jsx
 import React, { useEffect, useState } from "react";
 import ProblemComponent from "./components/ProblemComponent.jsx";
 import "./style.css";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+
 export default function ProblemsList() {
-  const [problems, setProblems] = useState([]);
+  const [data, setData] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const problemsPerPage = 10;
-  const maxPageNumbersToShow = 5;
+  const topicsPerPage = 1; // Display 1 topic per page
+
   const fetchData = async () => {
     try {
       const response = await fetch("https://dsa-tracker-backend-jxg.vercel.app/home", {
@@ -18,9 +18,8 @@ export default function ProblemsList() {
       if (!response.ok) {
         throw new Error('Failed to fetch');
       }
-      const data = await response.json();
-      console.log(data.result);
-      setProblems(data.result);
+      const responseData = await response.json();
+      setData(responseData.data);
       setLoading(false);
     } catch (error) {
       console.error('Fetch error:', error);
@@ -28,8 +27,8 @@ export default function ProblemsList() {
       setLoading(false);
     }
   };
-  useEffect(() => {
 
+  useEffect(() => {
     fetchData();
   }, []);
 
@@ -41,73 +40,37 @@ export default function ProblemsList() {
     return <div>Error: {error.message}</div>;
   }
 
-  const indexOfLastProblem = currentPage * problemsPerPage;
-  const indexOfFirstProblem = indexOfLastProblem - problemsPerPage;
-  const currentProblems = problems.slice(indexOfFirstProblem, indexOfLastProblem);
+  // Pagination logic
+  const totalTopics = Object.keys(data).length;
+  const totalPages = Math.ceil(totalTopics / topicsPerPage);
 
-  // Calculate total pages
-  const totalPages = Math.ceil(problems.length / problemsPerPage);
+  const startTopicIndex = (currentPage - 1) * topicsPerPage;
+  const endTopicIndex = Math.min(startTopicIndex + topicsPerPage, totalTopics);
+  const currentTopics = Object.keys(data).slice(startTopicIndex, endTopicIndex);
 
-  // Get the page numbers to display
-  const getPageNumbers = () => {
-    const pages = [];
-    const halfRange = Math.floor(maxPageNumbersToShow / 2);
-    let start = Math.max(1, currentPage - halfRange);
-    let end = Math.min(totalPages, currentPage + halfRange);
-
-    if (currentPage <= halfRange) {
-      end = Math.min(totalPages, maxPageNumbersToShow);
-    } else if (currentPage + halfRange >= totalPages) {
-      start = Math.max(1, totalPages - maxPageNumbersToShow + 1);
-    }
-
-    // Ensure we always show first page
-    if (start > 1) {
-      pages.push(1);
-      if (start > 2) {
-        pages.push("...");
-      }
-    }
-
-    for (let i = start; i <= end; i++) {
-      pages.push(i);
-    }
-
-    // Ensure we always show last page
-    if (end < totalPages) {
-      if (end < totalPages - 1) {
-        pages.push("...");
-      }
-      pages.push(totalPages);
-    }
-
-    return pages;
-  };
-
-  const pageNumbers = getPageNumbers();
-
-  // Change page
   const paginate = (pageNumber) => {
-    if (pageNumber !== "...") {
-      setCurrentPage(pageNumber);
-    }
+    setCurrentPage(pageNumber);
   };
 
   return (
     <div>
-      <div className="Topics">
-        <span>Array</span>
-        <i className="fa-solid fa-caret-down"></i>
-      </div>
-      {currentProblems.map((problem) => (
-        <ProblemComponent
-          key={problem._id}
-          problemName={problem.Problem}
-          difficultyLevel={problem.Difficulty || "Medium"}
-          URL={problem.URL}
-        />
+      {currentTopics.map((topic) => (
+        <div key={topic}>
+          <div className="Topics">
+            <span>{topic}</span>
+            <i className="fa-solid fa-caret-down"></i>
+          </div>
+          {data[topic].map((problem, index) => (
+            <ProblemComponent
+              key={index}
+              problemName={problem.Problem}
+              difficultyLevel={problem.Difficulty}
+              URL={problem.URL}
+            />
+          ))}
+        </div>
       ))}
-      <div className="DSA-problems-pagination ">
+      <div className="DSA-problems-pagination">
         <button
           className="DSA-problems-pagination-director"
           onClick={() => paginate(currentPage - 1)}
@@ -115,14 +78,14 @@ export default function ProblemsList() {
         >
           <IoIosArrowBack style={{ fontSize: "1.3rem" }} />
         </button>
-        {pageNumbers.map((number, index) => (
+        {[...Array(totalPages)].map((_, index) => (
           <button
+            key={index + 1}
             className="DSA-problems-pagination-button"
-            key={index}
-            onClick={() => paginate(number)}
-            disabled={currentPage === number}
+            onClick={() => paginate(index + 1)}
+            disabled={currentPage === index + 1}
           >
-            {number}
+            {index + 1}
           </button>
         ))}
         <button
