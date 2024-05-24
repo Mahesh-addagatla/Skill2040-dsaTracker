@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import Microsoft from "./styles/Microsoft.png";
 import Google from "./styles/Google.jpg";
@@ -25,6 +25,9 @@ export default function ProblemComponent({
     const [hoveredAdd, setHoveredAdd] = useState(false);
     const [hoveredStar, setHoveredStar] = useState(false);
     const [hoveredBookMark, setHoveredBookMark] = useState(false);
+    const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+    const [selectedStatus, setSelectedStatus] = useState("Unsolved");
+    // const dropdownRef = useRef(null);
     // const toggleExpansion = () => {
     //   setExpanded(!expanded);
     // };
@@ -68,18 +71,41 @@ export default function ProblemComponent({
         setHoveredBookMark(false);
         setShowText(false);
     };
+    const toggleDropdown = () => {
+        setIsDropdownVisible((prevState) => !prevState);
+    };
+    const handleStatusChange = (status) => {
+        setSelectedStatus(status);
+        setIsDropdownVisible(false);
+    };
+    const statusColors = {
+        Solved: "#50c878",
+        Revision: "rgb(221, 221, 57)",
+        Unsolved: "rgb(243, 55, 55)",
+    };
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            const dropdownMenu = document.querySelector(
+                ".problem-component-status-dropdown-menu"
+            );
+            if (dropdownMenu && !dropdownMenu.contains(event.target)) {
+                setIsDropdownVisible(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
     return (
         <div className="problem-rectangle">
             <div
-                style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    marginBottom: "0.5rem",
-                }}
             >
                 <h1
                     className="problem-rectangle-heading"
-                    style={{ position: "relative" }}
                 >
                     {problemName}
                 </h1>
@@ -126,8 +152,9 @@ export default function ProblemComponent({
             <div
                 style={{
                     display: "flex",
-                    alignItems: "center",
+                    alignItems: "center"
                 }}
+                className="problemBottom"
             >
                 <div className="problem-rectangle-solve-problem-container">
                     <a href={URL} target="_blank" rel="noopener noreferrer">
@@ -138,137 +165,153 @@ export default function ProblemComponent({
                             alt="GFG"
                         ></img>
                     </a>
-                    <img
-                        className="leetcode-logo-problem-solve-rectangle"
+                </div>
+
+                <div className="problem-component-icon-outer-container">
+                    <div
+                        className="problem-component-icon-container"
+                        onMouseEnter={handleMouseEnterSolution}
+                        onMouseLeave={handleMouseLeaveSolution}
                         style={{
-                            marginBottom: "-0.3rem",
-                            cursor: "pointer",
+                            transition: "transform 0.3s ease-in-out",
+                            transform: hoveredSolution ? "scale(1.1)" : "scale(1)",
+                            display: "inline-block",
+                            marginLeft: "1rem",
+                            marginTop: "0.3rem",
                         }}
-                        src={LeetCode}
-                        alt="LeetCode"
-                    ></img>
-                </div>
-                {/* <div 
-            className="problem-component-icon-container"
-            onMouseEnter={() => setShowText(true)}
-            onMouseLeave={() => setShowText(false)}
-            style={{marginLeft:'1rem'}}
-          >
-            <IoSolutionOutline 
-              style={{ height: 'auto', width: '25px', cursor: 'pointer'}}
-              title={showText ? "Solution" : ""}
-            />
-           
-          </div> */}
-                <div
-                    className="problem-component-icon-container"
-                    onMouseEnter={handleMouseEnterSolution}
-                    onMouseLeave={handleMouseLeaveSolution}
-                    style={{
-                        transition: "transform 0.3s ease-in-out",
-                        transform: hoveredSolution ? "scale(1.1)" : "scale(1)",
-                        display: "inline-block",
-                        marginLeft: "1rem",
-                        marginTop: "0.3rem",
-                    }}
-                >
-                    {hoveredSolution ? (
-                        <IoNewspaper
-                            className="problem-component-IoNewspaper"
-                            // style={{ height: "auto", width: "25px", cursor: "pointer" }}
-                            title={showText ? "Solution" : ""}
-                        />
-                    ) : (
-                        <IoNewspaperOutline
-                            className="problem-component-IoNewspaperOutline"
-                        //style={{ height: "auto", width: "25px", cursor: "pointer" }}
-                        />
-                    )}
-                </div>
-                <div
-                    className="problem-component-icon-container"
-                    onMouseEnter={handleMouseEnterAdd}
-                    onMouseLeave={handleMouseLeaveAdd}
-                    style={{
-                        transition: "transform 0.3s ease-in-out",
-                        transform: hoveredAdd ? "scale(1.1)" : "scale(1)",
-                        display: "inline-block",
-                        marginLeft: "1rem",
-                        marginTop: "0.3rem",
-                    }}
-                >
-                    {hoveredAdd ? (
-                        <MdAddCircle
-                            className="problem-component-MdAddCircle"
+                    >
+                        {hoveredSolution ? (
+                            <IoNewspaper
+                                className="problem-component-IoNewspaper"
+                                // style={{ height: "auto", width: "25px", cursor: "pointer" }}
+                                title={showText ? "Solution" : ""}
+                            />
+                        ) : (
+                            <IoNewspaperOutline
+                                className="problem-component-IoNewspaperOutline"
                             //style={{ height: "auto", width: "25px", cursor: "pointer" }}
-                            title={showText ? "Add Notes" : ""}
-                        />
-                    ) : (
-                        <MdAddCircleOutline
-                            className="problem-component-MdAddCircle"
-                        //style={{ height: "auto", width: "25px", cursor: "pointer" }}
-                        />
-                    )}
-                </div>
-                <div
-                    className="problem-component-icon-container"
-                    onMouseEnter={handleMouseEnterStar}
-                    onMouseLeave={handleMouseLeaveStar}
-                    style={{
-                        transition: "transform 0.3s ease-in-out",
-                        transform: hoveredStar ? "scale(1.1)" : "scale(1)",
-                        display: "inline-block",
-                        marginLeft: "1rem",
-                        marginTop: "0.3rem",
-                    }}
-                >
-                    {hoveredStar ? (
-                        <FaStar
-                            className="problem-component-FaStar"
+                            />
+                        )}
+                    </div>
+                    <div
+                        className="problem-component-icon-container"
+                        onMouseEnter={handleMouseEnterAdd}
+                        onMouseLeave={handleMouseLeaveAdd}
+                        style={{
+                            transition: "transform 0.3s ease-in-out",
+                            transform: hoveredAdd ? "scale(1.1)" : "scale(1)",
+                            display: "inline-block",
+                            marginLeft: "1rem",
+                            marginTop: "0.3rem",
+                        }}
+                    >
+                        {hoveredAdd ? (
+                            <MdAddCircle
+                                className="problem-component-MdAddCircle"
+                                //style={{ height: "auto", width: "25px", cursor: "pointer" }}
+                                title={showText ? "Add Notes" : ""}
+                            />
+                        ) : (
+                            <MdAddCircleOutline
+                                className="problem-component-MdAddCircle"
                             //style={{ height: "auto", width: "25px", cursor: "pointer" }}
-                            title={showText ? "Add to Favourites" : ""}
-                        />
-                    ) : (
-                        <FaRegStar
-                            className="problem-component-FaStar"
-                        //style={{ height: "auto", width: "25px", cursor: "pointer" }}
-                        />
-                    )}
-                </div>
-                <div
-                    className="problem-component-icon-container"
-                    onMouseEnter={handleMouseEnterBookMark}
-                    onMouseLeave={handleMouseLeaveBookMark}
-                    style={{
-                        transition: "transform 0.3s ease-in-out",
-                        transform: hoveredBookMark ? "scale(1.1)" : "scale(1)",
-                        display: "inline-block",
-                        marginLeft: "1rem",
-                        marginTop: "0.3rem",
-                    }}
-                >
-                    {hoveredBookMark ? (
-                        <IoBookmark
-                            className="problem-component-IoBookmark"
+                            />
+                        )}
+                    </div>
+                    <div
+                        className="problem-component-icon-container"
+                        onMouseEnter={handleMouseEnterStar}
+                        onMouseLeave={handleMouseLeaveStar}
+                        style={{
+                            transition: "transform 0.3s ease-in-out",
+                            transform: hoveredStar ? "scale(1.1)" : "scale(1)",
+                            display: "inline-block",
+                            marginLeft: "1rem",
+                            marginTop: "0.3rem",
+                        }}
+                    >
+                        {hoveredStar ? (
+                            <FaStar
+                                className="problem-component-FaStar"
+                                //style={{ height: "auto", width: "25px", cursor: "pointer" }}
+                                title={showText ? "Add to Favourites" : ""}
+                            />
+                        ) : (
+                            <FaRegStar
+                                className="problem-component-FaStar"
                             //style={{ height: "auto", width: "25px", cursor: "pointer" }}
-                            title={showText ? "Bookmark" : ""}
-                        />
-                    ) : (
-                        <IoBookmarkOutline
-                            className="problem-component-IoBookmark"
-                        //style={{ height: "auto", width: "25px", cursor: "pointer" }}
-                        />
-                    )}
+                            />
+                        )}
+                    </div>
+                    <div
+                        className="problem-component-icon-container"
+                        onMouseEnter={handleMouseEnterBookMark}
+                        onMouseLeave={handleMouseLeaveBookMark}
+                        style={{
+                            transition: "transform 0.3s ease-in-out",
+                            transform: hoveredBookMark ? "scale(1.1)" : "scale(1)",
+                            display: "inline-block",
+                            marginLeft: "1rem",
+                            marginTop: "0.3rem",
+                        }}
+                    >
+                        {hoveredBookMark ? (
+                            <IoBookmark
+                                className="problem-component-IoBookmark"
+                                //style={{ height: "auto", width: "25px", cursor: "pointer" }}
+                                title={showText ? "Bookmark" : ""}
+                            />
+                        ) : (
+                            <IoBookmarkOutline
+                                className="problem-component-IoBookmark"
+                            //style={{ height: "auto", width: "25px", cursor: "pointer" }}
+                            />
+                        )}
+                    </div>
                 </div>
                 <div
                     className="problem-completion-indicator"
                     style={{ color: "black" }}
                 >
-                    Status
-                    <IoIosArrowDown
-                        className="problem-component-IoIosArrowDown"
-                    //style={{ paddingLeft: "5px", cursor: "pointer" }}
-                    />
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
+                        <span style={{ color: statusColors[selectedStatus] }}>
+                            {selectedStatus}
+                        </span>
+                        <IoIosArrowDown
+                            className="problem-component-IoIosArrowDown"
+                            onClick={toggleDropdown}
+
+                        />
+                    </div>
+                    {isDropdownVisible && (
+                        <div className="problem-component-status-dropdown-menu">
+                            {/* Dropdown menu items */}
+                            <div
+                                className="problem-component-status-dropdown-menu-option-1"
+                                onClick={() => handleStatusChange("Solved")}
+                            >
+                                Solved
+                            </div>
+                            <div
+                                className="problem-component-status-dropdown-menu-option-2"
+                                onClick={() => handleStatusChange("Revision")}
+                            >
+                                Revision
+                            </div>
+                            <div
+                                className="problem-component-status-dropdown-menu-option-3"
+                                onClick={() => handleStatusChange("Unsolved")}
+                            >
+                                Unsolved
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
