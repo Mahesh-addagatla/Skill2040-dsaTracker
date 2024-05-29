@@ -13,7 +13,7 @@ const ProblemsList = ({ selectedTopics, selectedDifficulties }) => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("https://dsa-tracker-backend-jxg.vercel.app/home", {
+      const response = await fetch("https://dsa-tracker-backend-kappa.vercel.app/home", {
         method: 'GET'
       });
       if (!response.ok) {
