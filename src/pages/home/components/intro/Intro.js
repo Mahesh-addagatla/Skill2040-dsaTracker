@@ -24,14 +24,12 @@ const Intro = () => {
 
             <p>
               This meticulously curated DSA sheet, crafted by our team of
-              specialists, comprises over 320 comprehensive questions spanning
-              the breadth of Data Structures and Algorithms. From foundational
+              DSA specialists, comprises over 400+ comprehensive questions that covers
+              all the indepth topics of Data Structures and Algorithms. From very basics
               concepts to advanced problem-solving techniques, our sheet offers
-              invaluable insights to navigate coding interviews with confidence.
-              With its relevance to recent interview trends and emphasis on
-              clear explanations, it's not just a study aid, but your
-              indispensable companion on the journey to mastering DSA and
-              securing coveted positions in the tech industry.
+              invaluable insights to navigate coding interviews
+              With resource of coding platforms to solve those problems .
+              There are lot more options of adding notes , bookmarking them , writing your own article that enhances the utmost best experience for user .
             </p>
           </div>
         </div>

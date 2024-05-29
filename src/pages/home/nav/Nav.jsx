@@ -41,7 +41,7 @@ function Nav() {
                         </li>
                         <li className='dropdown'>
                             <Link to={clientUrl} onClick={play}>
-                                Contact
+                                AlgoVisualizer
                             </Link>
                         </li>
 

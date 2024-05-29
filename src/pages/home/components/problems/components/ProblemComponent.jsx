@@ -87,7 +87,7 @@ export default function ProblemComponent({
     let backgroundColor;
     console.log(difficultyLevel)
 
-    // Set the background color based on the difficulty level
+
     if (difficultyLevel === 'Easy') {
         backgroundColor = '#a1e5cd';
     } else if (difficultyLevel === 'Medium') {
@@ -96,10 +96,9 @@ export default function ProblemComponent({
         backgroundColor = '#F3A8A8';
     }
 
-    // Style object for the main div
+
     const mainDivStyle = {
         backgroundColor: backgroundColor,
-        // Add any other styles you may need
     };
 
     if (difficultyLevel === 'Easy') {

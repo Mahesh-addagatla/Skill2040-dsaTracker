@@ -1,43 +1,52 @@
 import React, { useState } from 'react';
-import topicsData from './data';
 import './style.css';
 import useSound from 'use-sound';
 import loud_btn from '../sounds/loud_btn_clk.wav';
-function Difficulty() {
+
+const difficulties = ['Easy', 'Medium', 'Hard'];
+
+function Difficulty({ setSelectedDifficulties }) {
     const [play] = useSound(loud_btn);
-    const [availableTopics, setAvailableTopics] = useState(topicsData);
-    const [selectedTopics, setSelectedTopics] = useState([]);
+    const [availableDifficulties, setAvailableDifficulties] = useState(difficulties);
+    const [selectedDifficulties, setSelectedDifficultiesLocal] = useState([]);
 
-    const handleTopicClick = (topic) => {
+    const handleDifficultyClick = (difficulty) => {
         play();
-        setAvailableTopics(availableTopics.filter(t => t !== topic));
-        setSelectedTopics([...selectedTopics, topic]);
+        const newAvailableDifficulties = availableDifficulties.filter(d => d !== difficulty);
+        const newSelectedDifficulties = [...selectedDifficulties, difficulty];
+        setAvailableDifficulties(newAvailableDifficulties);
+        setSelectedDifficultiesLocal(newSelectedDifficulties);
+        setSelectedDifficulties(newSelectedDifficulties); // Update parent state
     };
 
-    const handleSelectedTopicClick = (topic) => {
-
+    const handleSelectedDifficultyClick = (difficulty) => {
         play();
-        setSelectedTopics(selectedTopics.filter(t => t !== topic));
-        setAvailableTopics([...availableTopics, topic]);
+        const newSelectedDifficulties = selectedDifficulties.filter(d => d !== difficulty);
+        const newAvailableDifficulties = [...availableDifficulties, difficulty];
+        setSelectedDifficultiesLocal(newSelectedDifficulties);
+        setAvailableDifficulties(newAvailableDifficulties);
+        setSelectedDifficulties(newSelectedDifficulties); // Update parent state
     };
+
 
     return (
-        <div className="difficulty">
+        <div className="topicsComponent">
             <div className="header">
                 <p>Difficulty</p>
             </div>
-            <div className='topics'>            <div className="selected">
-                {selectedTopics.map((topic, index) => (
-
-                    <span key={index} onClick={() => handleSelectedTopicClick(topic)} className='eachTopic'>{topic} <i className="fa-solid fa-xmark"></i></span>
-
-                ))}
-            </div>
+            <div className='topics'>
+                <div className="selected">
+                    {selectedDifficulties.map((difficulty, index) => (
+                        <span key={index} onClick={() => handleSelectedDifficultyClick(difficulty)} className='eachTopic'>
+                            {difficulty} <i className="fa-solid fa-xmark"></i>
+                        </span>
+                    ))}
+                </div>
                 <div class="available-topics">
-                    {availableTopics.map((topic, index) => (
-
-                        <span key={index} onClick={() => handleTopicClick(topic)} className='eachTopic'>{topic}</span>
-
+                    {availableDifficulties.map((difficulty, index) => (
+                        <span key={index} onClick={() => handleDifficultyClick(difficulty)} className='eachTopic'>
+                            {difficulty}
+                        </span>
                     ))}
                 </div></div>
         </div>

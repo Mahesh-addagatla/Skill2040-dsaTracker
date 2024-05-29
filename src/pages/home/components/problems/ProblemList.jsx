@@ -3,7 +3,8 @@ import ProblemComponent from "./components/ProblemComponent.jsx";
 import "./style.css";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
-export default function ProblemsList() {
+const ProblemsList = ({ selectedTopics, selectedDifficulties }) => {
+
   const [data, setData] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -40,13 +41,29 @@ export default function ProblemsList() {
     return <div>Error: {error.message}</div>;
   }
 
+  // Filter data based on selected topics and difficulties
+  const filteredData = selectedTopics.length || selectedDifficulties.length
+    ? Object.keys(data).reduce((acc, topic) => {
+      if (selectedTopics.length && !selectedTopics.includes(topic)) {
+        return acc;
+      }
+      const filteredProblems = data[topic].filter(problem =>
+        selectedDifficulties.length ? selectedDifficulties.includes(problem.Difficulty) : true
+      );
+      if (filteredProblems.length) {
+        acc[topic] = filteredProblems;
+      }
+      return acc;
+    }, {})
+    : data;
+
   // Pagination logic
-  const totalTopics = Object.keys(data).length;
+  const totalTopics = Object.keys(filteredData).length;
   const totalPages = Math.ceil(totalTopics / topicsPerPage);
 
   const startTopicIndex = (currentPage - 1) * topicsPerPage;
   const endTopicIndex = Math.min(startTopicIndex + topicsPerPage, totalTopics);
-  const currentTopics = Object.keys(data).slice(startTopicIndex, endTopicIndex);
+  const currentTopics = Object.keys(filteredData).slice(startTopicIndex, endTopicIndex);
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -60,7 +77,7 @@ export default function ProblemsList() {
             <span>{topic}</span>
             <i className="fa-solid fa-caret-down"></i>
           </div>
-          {data[topic].map((problem, index) => (
+          {filteredData[topic].map((problem, index) => (
             <ProblemComponent
               key={index}
               problemName={problem.Problem}
@@ -98,4 +115,6 @@ export default function ProblemsList() {
       </div>
     </div>
   );
-}
+};
+
+export default ProblemsList;

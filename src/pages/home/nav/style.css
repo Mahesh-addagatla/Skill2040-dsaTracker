@@ -11,6 +11,10 @@
     z-index: 10000;
 }
 
+.navbar-container .active {
+    border-bottom: 3px solid #a1e5cd;
+}
+
 .navbar-container .NavContainer {
     width: 70%;
     display: flex;

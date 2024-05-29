@@ -3,21 +3,25 @@ import topicsData from './data';
 import './style.css';
 import useSound from 'use-sound';
 import loud_btn from '../sounds/loud_btn_clk.wav';
-function Topics() {
+
+function Topics({ setSelectedTopics }) {
     const [play] = useSound(loud_btn);
     const [availableTopics, setAvailableTopics] = useState(topicsData);
-    const [selectedTopics, setSelectedTopics] = useState([]);
+    const [selectedTopics, setSelectedTopicsLocal] = useState([]);
 
     const handleTopicClick = (topic) => {
         play();
         setAvailableTopics(availableTopics.filter(t => t !== topic));
-        setSelectedTopics([...selectedTopics, topic]);
+        const newSelectedTopics = [...selectedTopics, topic];
+        setSelectedTopicsLocal(newSelectedTopics);
+        setSelectedTopics(newSelectedTopics); // Update parent state
     };
 
     const handleSelectedTopicClick = (topic) => {
         play();
-        setSelectedTopics(selectedTopics.filter(t => t !== topic));
+        setSelectedTopicsLocal(selectedTopics.filter(t => t !== topic));
         setAvailableTopics([...availableTopics, topic]);
+        setSelectedTopics(selectedTopics.filter(t => t !== topic)); // Update parent state
     };
 
     return (
@@ -25,20 +29,22 @@ function Topics() {
             <div className="header">
                 <p>Topics</p>
             </div>
-            <div className='topics'>            <div className="selected">
-                {selectedTopics.map((topic, index) => (
-
-                    <span key={index} onClick={() => handleSelectedTopicClick(topic)} className='eachTopic'>{topic} <i className="fa-solid fa-xmark"></i></span>
-
-                ))}
-            </div>
-                <div class="available-topics">
-                    {availableTopics.map((topic, index) => (
-
-                        <span key={index} onClick={() => handleTopicClick(topic)} className='eachTopic'>{topic}</span>
-
+            <div className='topics'>
+                <div className="selected">
+                    {selectedTopics.map((topic, index) => (
+                        <span key={index} onClick={() => handleSelectedTopicClick(topic)} className='eachTopic'>
+                            {topic} <i className="fa-solid fa-xmark"></i>
+                        </span>
                     ))}
-                </div></div>
+                </div>
+                <div className="available-topics">
+                    {availableTopics.map((topic, index) => (
+                        <span key={index} onClick={() => handleTopicClick(topic)} className='eachTopic'>
+                            {topic}
+                        </span>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 }

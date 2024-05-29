@@ -2,7 +2,7 @@
     background: #ECECEC;
     padding: 0.4rem 1rem;
     border-radius: 1.4rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin: 0.2rem;
     transition: 0.5s;
     cursor: pointer;
@@ -19,6 +19,7 @@
     border-radius: 2rem;
     height: auto;
     width: 20vw;
+    margin-bottom: 2vh;
 
 }
 
