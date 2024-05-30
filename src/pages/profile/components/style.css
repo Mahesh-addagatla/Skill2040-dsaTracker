@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Archivo:ital,wght@0,100..900;1,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Cutive&family=Kanit&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@400;500;700&family=REM:ital,wght@0,100..900;1,100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap");
+.outer-container-probelms-solved-table {
+  border: 1px solid black;
+  width: 60%;
+  height: 65vh;
+  margin-left: 20%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.inner-container-probelms-solved-table {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid black;
+}
+.probelms-solved-table-heading-1 {
+  /* border: 1px solid black; */
+  width: 34%;
+  display: flex;
+  justify-content: center;
+  border-top-left-radius: 20px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.probelms-solved-table-heading-2 {
+  /* border: 1px solid black; */
+  width: 34%;
+  display: flex;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.probelms-solved-table-heading-3 {
+  /* border: 1px solid black; */
+  width: 34%;
+  display: flex;
+  justify-content: center;
+  border-top-right-radius: 20px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.probelms-solved-table-heading-h1 {
+  text-transform: uppercase;
+  font-family: "REM", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.probelms-solved-table-heading-h1:hover {
+  cursor: pointer;
+}
+.probelms-solved-table-heading-h1-span {
+  font-family: "Radio Canada Big", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+.problems-solved-table-problems-list {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 3rem;
+  overflow-y: auto;
+}
+
+.problems-solved-table-problems-list-ul {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Display in two columns */
+  gap: 10px;
+  margin-left: 1rem;
+}
+.problems-solved-table-problems-list-ul-li {
+  padding-right: 20px;
+}
