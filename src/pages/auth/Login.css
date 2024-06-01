@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Archivo:ital,wght@0,100..900;1,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Cutive&family=Kanit&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@400;500;700&family=REM:ital,wght@0,100..900;1,100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap");
+.outer-container-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.inner-container-login {
+  width: 25vw;
+  height: auto;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 0 3.5rem;
+  border-radius: 40px;
+  border: 1px solid #c7c2c2;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  justify-content: center;
+  align-items: center;
+}
+.login-component-heading {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 3rem;
+  margin: 1rem;
+  text-align: center;
+}
+.login-component-label-and-input-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+}
+.login-component-label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 0.5rem;
+}
+.login-component-input {
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  height: 6vh;
+  width: 21.5vw;
+  border-radius: 10px;
+  border: 1px solid #c7c2c2;
+  margin-bottom: 1rem;
+  font-size: 1.375rem;
+  padding-left: 4rem;
+}
+.login-component-input::placeholder {
+  color: #c7c2c2;
+}
+.login-component-input-container {
+  position: relative;
+}
+
+.login-component-input-icon-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 1vw;
+  transform: translateY(-65%);
+}
+.login-component-input-icon {
+  font-size: 1.7rem;
+}
+.login-component-input-icon-phone {
+  font-size: 1.5rem;
+}
+.login-component-login-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.login-component-login-button {
+  cursor: pointer;
+}
+.login-component-login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  position: relative;
+  padding: 0 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  border: 0;
+  box-shadow: hsl(214, 5%, 26%) 0px 7px 0px 0px;
+  background-color: hsl(214, 100%, 1%);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 31ms cubic-bezier(0.5, 0.7, 0.4, 1);
+}
+
+.login-component-login-button:before {
+  content: attr(alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 4px;
+  opacity: 1;
+}
+
+.login-component-login-button:active {
+  box-shadow: none;
+  transform: translateY(7px);
+  transition: 35ms cubic-bezier(0.5, 0.7, 0.4, 1);
+}
+
+.login-component-login-button:hover:before {
+  transition: all 0s;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.login-component-login-button i {
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  font-style: normal;
+  transition: all 2s ease;
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.login-component-login-button:hover i {
+  transition: all 0.2s ease;
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.login-component-login-button:hover i:nth-child(1) {
+  transition-delay: 0.045s;
+}
+
+.login-component-login-button:hover i:nth-child(2) {
+  transition-delay: calc(0.045s * 3);
+}
+
+.login-component-login-button:hover i:nth-child(3) {
+  transition-delay: calc(0.045s * 4);
+}
+
+.login-component-login-button:hover i:nth-child(4) {
+  transition-delay: calc(0.045s * 5);
+}
+.login-component-login-button:hover i:nth-child(5) {
+  transition-delay: calc(0.045s * 6);
+}
+.login-component-or-description {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.3rem;
+}
+.login-component-google-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+.login-component-google-button {
+  max-width: 320px;
+  display: flex;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  gap: 0.75rem;
+  color: #fff;
+  background-color: black;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+
+.login-component-google-button svg {
+  height: 24px;
+}
+
+.login-component-google-button:hover {
+  transform: scale(1.02);
+}
+.login-component-signup-redirect-description {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+}
+.login-component-signup-redirect {
+  text-decoration: none;
+  color: #5db595;
+}
