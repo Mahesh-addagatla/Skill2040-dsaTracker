@@ -5,6 +5,7 @@ import Home from './pages/home/Home';
 import Settings from './pages/settings/Settings';
 import { Analytics } from "@vercel/analytics/react"
 import ContributionBoard from './pages/contibutionboard/ContributionBoard';
+import SolutionPage from './pages/solutionpage/SolutionPage';
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/contribution" element={<ContributionBoard/>}/>
+          <Route path="/solution" element={<SolutionPage problemName={"Kadane's Algorithm"}/>}/>
         </Routes>
 
       </Router>
