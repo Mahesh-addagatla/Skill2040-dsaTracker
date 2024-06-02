@@ -1,37 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import ProblemComponent from "./components/ProblemComponent.jsx";
 import "./style.css";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import { DataProvider } from '../../../../DataProvider.js';
 
 const ProblemsList = ({ selectedTopics, selectedDifficulties }) => {
-
-  const [data, setData] = useState({});
+  const { data, loading, error } = useContext(DataProvider);
   const [currentPage, setCurrentPage] = useState(1);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const topicsPerPage = 1; // Display 1 topic per page
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch("https://dsa-tracker-backend-kappa.vercel.app/home", {
-        method: 'GET'
-      });
-      if (!response.ok) {
-        throw new Error('Failed to fetch');
-      }
-      const responseData = await response.json();
-      setData(responseData.data);
-      setLoading(false);
-    } catch (error) {
-      console.error('Fetch error:', error);
-      setError(error);
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   if (loading) {
     return <div>Loading...</div>;
