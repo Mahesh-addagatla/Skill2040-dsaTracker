@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import Microsoft from "./styles/Microsoft.png";
-import Google from "./styles/Google.jpg";
-import Telegram from "./styles/Telegram.png";
-import Apple from "./styles/Apple.png";
-import Dell from "./styles/Dell.png";
-import Spotify from "./styles/Spotify.png";
-import LeetCode from "./styles/LeetCode.png";
 import GFG from "./styles/GFG.svg";
 import { IoNewspaperOutline, IoNewspaper } from "react-icons/io5";
 import { MdAddCircleOutline, MdAddCircle } from "react-icons/md";
