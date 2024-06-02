@@ -1,6 +1,8 @@
-import logo from "./logo.svg";
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import logo from './logo.svg';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ContributionBoard from './pages/contibutionboard/ContributionBoard';
+import SolutionPage from './pages/solutionpage/SolutionPage';
 import Home from "./pages/home/Home";
 import Settings from "./pages/settings/Settings";
 import { Analytics } from "@vercel/analytics/react";
@@ -32,6 +34,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/contribution" element={<ContributionBoard/>}/>
+          <Route path="/solution" element={<SolutionPage problemName={"Kadane's Algorithm"}/>}/>
         </Routes>
       </Router>
     </div>
