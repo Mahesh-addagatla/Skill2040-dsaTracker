@@ -71,14 +71,14 @@ int maxSubArraySum(int a[], int size) {
   };
 
   const customStyle = {
-    ...darcula, // Start with Darcula theme and override specific styles
+    ...darcula,
     'code[class*="language-"]': {
-      color: "#44B6A8", // Text color
+      color: "#44B6A8",
       fontFamily: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
       fontSize: "1em",
     },
     'pre[class*="language-"]': {
-      backgroundColor: "#1e1e1e", // Background color
+      backgroundColor: "#1e1e1e",
       padding: "20px",
       borderRadius: "5px",
       overflow: "auto",
@@ -138,14 +138,7 @@ int maxSubArraySum(int a[], int size) {
       </div>
       <div style={{ position: "absolute", top: "10px", right: "10px" }}>
         <button
-          style={{
-            backgroundColor: "#44475a",
-            color: "#f8f8f2",
-            border: "none",
-            padding: "5px 10px",
-            cursor: "pointer",
-            borderRadius: "5px",
-          }}
+          className="copyBtn"
           onClick={handleCopy}
         >
           Copy

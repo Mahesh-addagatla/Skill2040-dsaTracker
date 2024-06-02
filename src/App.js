@@ -27,15 +27,13 @@ function App() {
                 </PrivateRoute>
               }
             />
-            {/* Add a route for login if you have a login component */}
-            {/* <Route path="/login" element={<Login />} /> */}
           </Routes>
         </AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/settings" element={<Settings />} />
-          <Route path="/contribution" element={<ContributionBoard/>}/>
-          <Route path="/solution" element={<SolutionPage problemName={"Kadane's Algorithm"}/>}/>
+          <Route path="/contribution" element={<ContributionBoard />} />
+          <Route path="/solution" element={<SolutionPage problemName={"Kadane's Algorithm"} />} />
         </Routes>
       </Router>
     </div>

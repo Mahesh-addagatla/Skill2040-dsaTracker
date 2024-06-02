@@ -65,3 +65,12 @@
   border-bottom-color: #1fbd84;
   text-transform: uppercase;
 }
+
+.copyBtn {
+  background-color: #d7d8df;
+  color: #f8f8f2;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
