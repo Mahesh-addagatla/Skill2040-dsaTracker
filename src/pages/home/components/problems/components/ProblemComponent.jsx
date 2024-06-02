@@ -142,7 +142,6 @@ export default function ProblemComponent({
                 </h1>
                 <div
                     className="problem-difficulty-indicator"
-
                 >
                     {difficultyLevel}
                 </div>
@@ -181,13 +180,11 @@ export default function ProblemComponent({
                         {hoveredSolution ? (
                             <IoNewspaper
                                 className="problem-component-IoNewspaper"
-                                // style={{ height: "auto", width: "25px", cursor: "pointer" }}
                                 title={showText ? "Solution" : ""}
                             />
                         ) : (
                             <IoNewspaperOutline
                                 className="problem-component-IoNewspaperOutline"
-                            //style={{ height: "auto", width: "25px", cursor: "pointer" }}
                             />
                         )}
                     </div>
@@ -206,13 +203,11 @@ export default function ProblemComponent({
                         {hoveredAdd ? (
                             <MdAddCircle
                                 className="problem-component-MdAddCircle"
-                                //style={{ height: "auto", width: "25px", cursor: "pointer" }}
                                 title={showText ? "Add Notes" : ""}
                             />
                         ) : (
                             <MdAddCircleOutline
                                 className="problem-component-MdAddCircle"
-                            //style={{ height: "auto", width: "25px", cursor: "pointer" }}
                             />
                         )}
                     </div>
@@ -231,13 +226,11 @@ export default function ProblemComponent({
                         {hoveredStar ? (
                             <FaStar
                                 className="problem-component-FaStar"
-                                //style={{ height: "auto", width: "25px", cursor: "pointer" }}
                                 title={showText ? "Add to Favourites" : ""}
                             />
                         ) : (
                             <FaRegStar
                                 className="problem-component-FaStar"
-                            //style={{ height: "auto", width: "25px", cursor: "pointer" }}
                             />
                         )}
                     </div>
@@ -256,13 +249,11 @@ export default function ProblemComponent({
                         {hoveredBookMark ? (
                             <IoBookmark
                                 className="problem-component-IoBookmark"
-                                //style={{ height: "auto", width: "25px", cursor: "pointer" }}
                                 title={showText ? "Bookmark" : ""}
                             />
                         ) : (
                             <IoBookmarkOutline
                                 className="problem-component-IoBookmark"
-                            //style={{ height: "auto", width: "25px", cursor: "pointer" }}
                             />
                         )}
                     </div>
@@ -289,7 +280,6 @@ export default function ProblemComponent({
                     </div>
                     {isDropdownVisible && (
                         <div className="problem-component-status-dropdown-menu">
-                            {/* Dropdown menu items */}
                             <div
                                 className="problem-component-status-dropdown-menu-option-1"
                                 onClick={() => handleStatusChange("Solved")}
