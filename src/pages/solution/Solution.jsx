@@ -7,10 +7,10 @@ import Nav from '../../components/nav/Nav.jsx';
 import SolutionPage from '../solutionpage/SolutionPage.jsx';
 function Home() {
     return (
-        <div className="App">
+        <div>
             <Analytics />
             <Nav />
-            <div className="main">
+            <div className="Solution">
                 <SolutionPage />
             </div>
             <Footer />
