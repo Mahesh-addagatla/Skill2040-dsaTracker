@@ -86,7 +86,6 @@ export default function ProblemComponent({
     };
 
     let backgroundColor;
-    console.log(difficultyLevel)
 
 
     if (difficultyLevel === 'Easy') {

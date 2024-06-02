@@ -1,103 +1,112 @@
-import React, { useState, useEffect } from 'react'
-import './style.css'
+import React, { useState } from 'react';
+import './style.css';
 import { Link } from 'react-router-dom';
-import useSound from 'use-sound';
 import loud_btn from '../sounds/loud_btn_clk.wav';
 
+// CustomLink Component
+const CustomLink = ({ to, children, className = '' }) => {
+
+    const sound = new Audio(loud_btn);
+
+    const handleClick = (e) => {
+        sound.play();
+    };
+
+    return (
+        <Link to={`${to}`} className={className} onClick={handleClick}>
+            {children}
+        </Link>
+    );
+};
+
 function Nav() {
-
-    const clientUrl = process.env.CLIENT_URL;
-
-    const [play] = useSound(loud_btn);
     const [showMenu, setShowMenu] = useState(false);
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     };
 
+    const sound = new Audio(loud_btn);
+    const handleProfileClick = () => {
+        sound.play();
+    };
+
     return (
         <>
-            <div className='navbar-container '>
+            <div className='navbar-container'>
                 <div className="NavContainer">
                     <div className='logo'>
-                        <img src="/images/nav/logo.jpg"></img>
+                        <img src="/images/nav/logo.jpg" alt="Logo" />
                         <h4>DSA-Tracker</h4>
                     </div>
                     <nav className='fill stroke'>
-
                         <li>
-                            <Link to={clientUrl} className='active' onClick={play}>
+                            <CustomLink to='/' className='active'>
                                 Home
-                            </Link>
+                            </CustomLink>
                         </li>
                         <li>
-                            <Link to={clientUrl} onClick={play}>
+                            <CustomLink to='/about'>
                                 About
-                            </Link>
+                            </CustomLink>
                         </li>
                         <li className='dropdown'>
-                            <Link to={clientUrl} onClick={play}>
+                            <CustomLink to='/leaderboard'>
                                 LeaderBoard
-                            </Link>
+                            </CustomLink>
                         </li>
                         <li className='dropdown'>
-                            <Link to={clientUrl} onClick={play}>
+                            <CustomLink to='/algo-visualizer'>
                                 Algo-Visualizer
-                            </Link>
+                            </CustomLink>
                         </li>
-
-
                     </nav>
-                    <div className='profile' onClick={play}>
+                    <div className='profile' onClick={handleProfileClick}>
                         <span className='name'>G.VenkataKousik</span>
-                        <img src="/images/nav/gvk.jpg"></img>
+                        <img src="/images/nav/gvk.jpg" alt="Profile" />
                     </div>
                 </div>
-
-            </div >
+            </div>
 
             <nav className='nav-responsive'>
                 {showMenu && (
-                    <ul className='responsive-menu' >
+                    <ul className='responsive-menu'>
                         <div className='tags show'>
                             <li>
-                                <Link to={clientUrl} className='active' onClick={play}>
+                                <CustomLink to='/' className='active'>
                                     Home
-                                </Link>
+                                </CustomLink>
                             </li>
                             <li>
-                                <Link to={clientUrl} onClick={play}>
+                                <CustomLink to='/about'>
                                     About
-                                </Link>
+                                </CustomLink>
                             </li>
                             <li className='dropdown'>
-                                <Link to={clientUrl} onClick={play}>
+                                <CustomLink to='/services'>
                                     Services
-                                </Link>
+                                </CustomLink>
                             </li>
                             <li className='dropdown'>
-                                <Link to={clientUrl} onClick={play}>
+                                <CustomLink to='/casestudies'>
                                     CaseStudies
-                                </Link>
+                                </CustomLink>
                             </li>
                             <li>
-                                <Link to={clientUrl} onClick={play}>
+                                <CustomLink to='/specialities'>
                                     Specialities
-                                </Link>
+                                </CustomLink>
                             </li>
                             <li>
-                                <Link to={clientUrl} onClick={play}>
+                                <CustomLink to='/contact'>
                                     Contact Us
-                                </Link>
+                                </CustomLink>
                             </li>
                         </div>
                     </ul>
-
                 )}
-
             </nav>
         </>
-
-    )
+    );
 }
 
-export default Nav
+export default Nav;
