@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './style.css'
 import { Link } from 'react-router-dom';
 import useSound from 'use-sound';
-import loud_btn from '../components/sounds/loud_btn_clk.wav';
+import loud_btn from '../sounds/loud_btn_clk.wav';
 
 function Nav() {
 
@@ -41,7 +41,7 @@ function Nav() {
                         </li>
                         <li className='dropdown'>
                             <Link to={clientUrl} onClick={play}>
-                                AlgoVisualizer
+                                Algo-Visualizer
                             </Link>
                         </li>
 
