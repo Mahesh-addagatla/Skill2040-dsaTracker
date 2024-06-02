@@ -27,6 +27,7 @@ export default function ProblemComponent({
     const [hoveredBookMark, setHoveredBookMark] = useState(false);
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
     const [selectedStatus, setSelectedStatus] = useState("Unsolved");
+    const [selectedDifficulties, setSelectedDifficulties] = useState([]);
     // const dropdownRef = useRef(null);
     // const toggleExpansion = () => {
     //   setExpanded(!expanded);

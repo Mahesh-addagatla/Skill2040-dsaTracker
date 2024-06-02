@@ -5,7 +5,6 @@ import ContributionBoard from './pages/contibutionboard/ContributionBoard';
 import Solution from './pages/solution/Solution'
 import Home from "./pages/home/Home";
 import Settings from "./pages/settings/Settings";
-import { Analytics } from "@vercel/analytics/react";
 import Signup from "./pages/auth/Signup";
 import { AuthProvider } from "./pages/auth/AuthContext";
 import PrivateRoute from "./pages/auth/PrivateRoute";
