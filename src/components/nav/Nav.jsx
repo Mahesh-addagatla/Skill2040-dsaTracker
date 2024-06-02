@@ -20,15 +20,15 @@ const CustomLink = ({ to, children, className = '' }) => {
 };
 
 function Nav() {
+    const sound = new Audio(loud_btn);
+    const handleClick = (e) => {
+        sound.play();
+    };
     const [showMenu, setShowMenu] = useState(false);
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     };
 
-    const sound = new Audio(loud_btn);
-    const handleProfileClick = () => {
-        sound.play();
-    };
 
     return (
         <>
@@ -55,12 +55,12 @@ function Nav() {
                             </CustomLink>
                         </li>
                         <li className='dropdown'>
-                            <CustomLink to='/algo-visualizer'>
+                            <Link to='https://gvk-algorithm-visualizer.vercel.app/' className='algoVisualizer' onClick={handleClick}>
                                 Algo-Visualizer
-                            </CustomLink>
+                            </Link>
                         </li>
                     </nav>
-                    <div className='profile' onClick={handleProfileClick}>
+                    <div className='profile'>
                         <span className='name'>G.VenkataKousik</span>
                         <img src="/images/nav/gvk.jpg" alt="Profile" />
                     </div>
