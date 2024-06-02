@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./style.css";
 import GFG from "./styles/GFG.svg";
 import { IoNewspaperOutline, IoNewspaper } from "react-icons/io5";
@@ -12,6 +13,13 @@ export default function ProblemComponent({
     difficultyLevel,
     URL,
 }) {
+
+    const navigate = useNavigate();
+
+    const navigateToSolution = () => {
+        navigate('/solution');
+    };
+
     // const [expanded, setExpanded] = useState(false);
     const [showText, setShowText] = useState(false);
     const [hoveredSolution, setHoveredSolution] = useState(false);
@@ -21,13 +29,8 @@ export default function ProblemComponent({
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
     const [selectedStatus, setSelectedStatus] = useState("Unsolved");
     const [selectedDifficulties, setSelectedDifficulties] = useState([]);
-    // const dropdownRef = useRef(null);
-    // const toggleExpansion = () => {
-    //   setExpanded(!expanded);
-    // };
-    // const hideLogos = () => {
-    //   setExpanded(false);
-    // };
+
+
     const handleMouseEnterSolution = () => {
         setHoveredSolution(true);
         setShowText(true);
@@ -161,6 +164,7 @@ export default function ProblemComponent({
                         className="problem-component-icon-container"
                         onMouseEnter={handleMouseEnterSolution}
                         onMouseLeave={handleMouseLeaveSolution}
+                        onClick={navigateToSolution}
                         style={{
                             transition: "transform 0.3s ease-in-out",
                             transform: hoveredSolution ? "scale(1.1)" : "scale(1)",
