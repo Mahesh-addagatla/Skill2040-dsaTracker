@@ -110,10 +110,8 @@ export default function ProblemComponent({
         backgroundColor = '#F3A8A8';
     }
 
-    // Style object for the main div
     const DifficultyColor = {
         color: backgroundColor,
-        // Add any other styles you may need
     };
 
     useEffect(() => {
