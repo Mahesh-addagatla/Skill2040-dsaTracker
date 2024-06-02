@@ -149,39 +149,6 @@ export default function ProblemComponent({
                     {difficultyLevel}
                 </div>
             </div>
-            <div style={{ marginLeft: "1.5rem" }} className="problem-logo-text">
-                <img
-                    className="problem-rectangle-company-logo"
-                    src={Microsoft}
-                    alt="Microsoft"
-                ></img>
-                <img
-                    className="problem-rectangle-company-logo"
-                    src={Google}
-                    alt="Google"
-                ></img>
-                <img
-                    className="problem-rectangle-company-logo"
-                    src={Telegram}
-                    alt="Telegram"
-                ></img>
-
-                <img
-                    className="problem-rectangle-company-logo"
-                    src={Dell}
-                    alt="Telegram"
-                ></img>
-                <img
-                    className="problem-rectangle-company-logo"
-                    src={Apple}
-                    alt="Apple"
-                ></img>
-                <img
-                    className="problem-rectangle-company-logo"
-                    src={Spotify}
-                    alt="Spotify"
-                ></img>
-            </div>
             <div
                 style={{
                     display: "flex",

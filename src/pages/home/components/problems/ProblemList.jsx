@@ -41,7 +41,6 @@ const ProblemsList = ({ selectedTopics, selectedDifficulties }) => {
     return <div>Error: {error.message}</div>;
   }
 
-  // Filter data based on selected topics and difficulties
   const filteredData = selectedTopics.length || selectedDifficulties.length
     ? Object.keys(data).reduce((acc, topic) => {
       if (selectedTopics.length && !selectedTopics.includes(topic)) {
@@ -57,7 +56,6 @@ const ProblemsList = ({ selectedTopics, selectedDifficulties }) => {
     }, {})
     : data;
 
-  // Pagination logic
   const totalTopics = Object.keys(filteredData).length;
   const totalPages = Math.ceil(totalTopics / topicsPerPage);
 
