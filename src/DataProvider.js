@@ -16,7 +16,7 @@ export const DataProvider = ({ children }) => {
                 throw new Error('Failed to fetch');
             }
             const responseData = await response.json();
-            console.log(responseData)
+            console.log(responseData.data)
             setData(responseData.data);
             setLoading(false);
         } catch (error) {

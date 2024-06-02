@@ -1,13 +1,37 @@
-import React, { useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProblemComponent from "./components/ProblemComponent.jsx";
 import "./style.css";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import { DataProvider } from '../../../../DataProvider.js';
 
 const ProblemsList = ({ selectedTopics, selectedDifficulties }) => {
-  const { data, loading, error } = useContext(DataProvider);
+
+  const [data, setData] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const topicsPerPage = 1; // Display 1 topic per page
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("https://dsa-tracker-backend-kappa.vercel.app/home", {
+        method: 'GET'
+      });
+      if (!response.ok) {
+        throw new Error('Failed to fetch');
+      }
+      const responseData = await response.json();
+      setData(responseData.data);
+      setLoading(false);
+    } catch (error) {
+      console.error('Fetch error:', error);
+      setError(error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -17,6 +41,7 @@ const ProblemsList = ({ selectedTopics, selectedDifficulties }) => {
     return <div>Error: {error.message}</div>;
   }
 
+  // Filter data based on selected topics and difficulties
   const filteredData = selectedTopics.length || selectedDifficulties.length
     ? Object.keys(data).reduce((acc, topic) => {
       if (selectedTopics.length && !selectedTopics.includes(topic)) {
@@ -32,6 +57,7 @@ const ProblemsList = ({ selectedTopics, selectedDifficulties }) => {
     }, {})
     : data;
 
+  // Pagination logic
   const totalTopics = Object.keys(filteredData).length;
   const totalPages = Math.ceil(totalTopics / topicsPerPage);
 
