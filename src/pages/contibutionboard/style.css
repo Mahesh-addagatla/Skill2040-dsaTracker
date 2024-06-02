@@ -1,18 +1,21 @@
+.contribution-Container {
+  margin: 0 auto;
+}
+
 .react-calendar-heatmap text {
-  font-size: 10px;
+  font-size: 0.5rem;
   fill: #aaa;
 }
 
 .react-calendar-heatmap .react-calendar-heatmap-small-text {
-  font-size: 5px;
+  font-size: 0.5vw;
 }
 
 .react-calendar-heatmap rect:hover {
   stroke: #555;
-  stroke-width: 1px;
+  stroke-width: 0.1vw;
 }
 
-/* Default color scale */
 .react-calendar-heatmap .color-empty {
   fill: #eeeeee;
 }

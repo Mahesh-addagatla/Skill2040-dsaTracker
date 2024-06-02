@@ -49,8 +49,7 @@ const ContributionBoard = () => {
   };
 
   return (
-
-    <div className="contribution-Board" style={ContributionStyle}>
+    <div className="contribution-Container">    <div className="contribution-Board" style={ContributionStyle}>
       <CalendarHeatmap
         startDate={new Date("2024-01-01")}
         endDate={new Date("2024-12-01")}
@@ -59,7 +58,8 @@ const ContributionBoard = () => {
         classForValue={classForValue}
         values={dates}
       />
-    </div>
+    </div></div>
+
   );
 };
 
