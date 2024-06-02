@@ -3,14 +3,6 @@ import CalendarHeatmap from "react-calendar-heatmap";
 import "./style.css";
 
 const ContributionBoard = () => {
-  const ContributionStyle = {
-    width: "50rem",
-    margin: "5rem",
-    border: "1px solid #ccc",
-    padding: "2rem 1.5rem 0rem 1rem",
-    borderRadius: "1rem",
-    backgroundColor: "White",
-  };
 
   const dates = [
     { date: "2024-01-03", count: 2 },
@@ -51,7 +43,7 @@ const ContributionBoard = () => {
   };
 
   return (
-    <div className="contribution-Board" style={ContributionStyle}>
+    <div className="contribution-Board">
       <CalendarHeatmap
         startDate={new Date("2024-01-01")}
         endDate={new Date("2024-12-01")}
