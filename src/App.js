@@ -10,6 +10,10 @@ import { AuthProvider } from './pages/auth/AuthContext';
 import PrivateRoute from './pages/auth/PrivateRoute';
 import Dashboard from './pages/auth/Dashboard';
 import Login from './pages/auth/Login';
+import AddNotes from './components/addnotes/AddNotes';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
@@ -30,10 +34,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/contribution" element={<ContributionBoard />} />
+            <Route path="/addnotes" element={<AddNotes />} />
             <Route path="/solution" element={<Solution problemName={"Kadane's Algorithm"} />} />
           </Routes>
         </AuthProvider>
       </Router>
+      <ToastContainer position='top-right' style={{zIndex:9999999}}/>
     </div>
   );
 }
