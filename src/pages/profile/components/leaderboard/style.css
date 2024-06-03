@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Archivo:ital,wght@0,100..900;1,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Cutive&family=Kanit&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@400;500;700&family=REM:ital,wght@0,100..900;1,100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap");
+@keyframes borderAnimation {
+  0% {
+    border-color: #06ffb0;
+  }
+  25% {
+    border-color: #37b68e;
+  }
+  50% {
+    border-color: #128560;
+  }
+  75% {
+    border-color: #65edc2;
+  }
+  100% {
+    border-color: #06ffb0;
+  }
+}
+.leaderboard-container {
+  padding-top: 1%;
+  padding-left: 2%;
+  padding: 1% 2%;
+  border: 2px solid #61d8ad;
+  width: 35vw;
+  font-family: "Poppins", sans-serif;
+  animation: borderAnimation 4s infinite;
+  font-style: normal;
+  border-radius: 2vw;
+  margin: 1%;
+}
+.leaderboard-heading {
+  font-weight: 700;
+  font-size: 1.8vw;
+  color: #61d8ad;
+  margin-bottom: 0;
+}
+.leaderboard-heading-description {
+  font-weight: 400;
+  font-size: 1.2vw;
+}
+.leaderboard-label {
+  font-size: 1.2vw;
+  font-weight: 400;
+  text-align: left;
+  color: #a8a0a8;
+}
+.leaderboard-label-rank {
+  width: 5vw;
+}
+.leaderboard-label-name {
+  width: 18vw;
+}
+
+.leaderboard-rank,
+.leaderboard-name,
+.leaderboard-score {
+  font-size: 1.2vw;
+  padding: 1vh 0;
+}
