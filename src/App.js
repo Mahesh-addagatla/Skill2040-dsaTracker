@@ -27,10 +27,12 @@ function App() {
             />
             {/* Add a route for login if you have a login component */}
             {/* <Route path="/login" element={<Login />} /> */}
+            <Route path="/" element={<Home />} />
           </Routes>
+
         </AuthProvider>
         <Routes>
-          <Route path="/" element={<Home />} />
+          
           <Route path="/settings" element={<Settings />} />
         </Routes>
       </Router>
