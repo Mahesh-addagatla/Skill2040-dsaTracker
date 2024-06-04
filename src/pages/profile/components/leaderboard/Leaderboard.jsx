@@ -1,10 +1,11 @@
 import React from "react";
 import "./style.css";
+import { BsAwardFill } from "react-icons/bs";
 
 export default function Leaderboard() {
   return (
     <div className="leaderboard-container">
-      <h1 className="leaderboard-heading">Weekly Leaderboard</h1>
+      <h1 className="leaderboard-heading">Leaderboard</h1>
       <h2 className="leaderboard-heading-description">
         Code, Compete, Conquer - Unleash your coding prowess and dominate the
         leaderboard
@@ -19,18 +20,30 @@ export default function Leaderboard() {
         </thead>
         <tbody>
           <tr>
-            <td className="leaderboard-rank">1.</td>
-            <td className="leaderboard-name">Emma Santners</td>
-            <td className="leaderboard-score">182 SP</td>
+            <td className="leaderboard-rank-container">
+              <BsAwardFill className="leaderboard-rank-1" />
+            </td>
+            <td className="leaderboard-name leaderboard-top-ranks-shine">
+              Emma Santners
+            </td>
+            <td className="leaderboard-score ">182 SP</td>
           </tr>
           <tr>
-            <td className="leaderboard-rank">2.</td>
-            <td className="leaderboard-name">Olivia Smith</td>
+            <td className="leaderboard-rank-container">
+              <BsAwardFill className="leaderboard-rank-2 " />
+            </td>
+            <td className="leaderboard-name leaderboard-top-ranks-shine">
+              Olivia Smith
+            </td>
             <td className="leaderboard-score">160 SP</td>
           </tr>
           <tr>
-            <td className="leaderboard-rank">3.</td>
-            <td className="leaderboard-name">Ethan Johnson</td>
+            <td className="leaderboard-rank-container">
+              <BsAwardFill className="leaderboard-rank-3" />
+            </td>
+            <td className="leaderboard-name leaderboard-top-ranks-shine">
+              Ethan Johnson
+            </td>
             <td className="leaderboard-score">149 SP</td>
           </tr>
           <tr>
