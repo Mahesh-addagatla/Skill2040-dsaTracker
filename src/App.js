@@ -9,6 +9,7 @@ import { AuthProvider } from "./pages/auth/AuthContext";
 import PrivateRoute from "./pages/auth/PrivateRoute";
 import Dashboard from "./pages/auth/Dashboard";
 import Login from "./pages/auth/Login";
+import Leaderboard from "./pages/profile/components/leaderboard/Leaderboard";
 function App() {
   return (
     <div className="App">
@@ -25,14 +26,12 @@ function App() {
                 </PrivateRoute>
               }
             />
-            {/* Add a route for login if you have a login component */}
-            {/* <Route path="/login" element={<Login />} /> */}
-            <Route path="/" element={<Home />} />
           </Routes>
 
         </AuthProvider>
         <Routes>
-          
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/" element={<Home />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
       </Router>
