@@ -18,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Home />} />
             <Route
               path="/dashboard"
               element={
@@ -31,7 +32,6 @@ function App() {
         </AuthProvider>
         <Routes>
           <Route path="/leaderboard" element={<Leaderboard />} />
-          <Route path="/" element={<Home />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
       </Router>

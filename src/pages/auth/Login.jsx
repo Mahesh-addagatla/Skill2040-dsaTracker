@@ -6,7 +6,6 @@ import { MdAlternateEmail } from "react-icons/md";
 import { IoLockClosed } from "react-icons/io5";
 import { auth, googleProvider } from "./firebase";
 import { signInWithPopup } from "firebase/auth";
-import { X } from 'lucide-react';
 
 const Login = () => {
   const emailRef = useRef();
