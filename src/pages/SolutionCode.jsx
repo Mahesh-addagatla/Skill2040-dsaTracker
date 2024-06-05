@@ -1,6 +1,8 @@
 import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import ProblemSolvedChart from '../components/ProblemSolvedChart.jsx';
+import TopicSolved from '../components/TopicSolved.jsx';
 
 const SolutionCode = () => {
     const javaCode = `class Solution{
@@ -53,7 +55,10 @@ const SolutionCode = () => {
             <SyntaxHighlighter language="java" style={customStyle}>
                 {javaCode}
             </SyntaxHighlighter>
+            <ProblemSolvedChart />
+            <TopicSolved />
         </div>
+        
     );
 };
 
