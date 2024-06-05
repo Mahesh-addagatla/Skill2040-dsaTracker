@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Archivo:ital,wght@0,100..900;1,100..900&family=Kanit&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@400;500;700&display=swap");
+
+.solution-page-container {
+  border: 2px solid #1fbd84;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.solution-page-problem-name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #252424;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.solution-page-problem-sub-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #1fbd84;
+  font-size: 1.8rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.solution-page-problem-description {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.1rem;
+  color: #575555;
+  margin-bottom: 1rem;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.tabs .tab {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #575555;
+  margin-right: 5px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.tabs .tab:hover {
+  color: #1fbd84;
+}
+
+.tabs .tab.active {
+  color: #1fbd84;
+  border-bottom-color: #1fbd84;
+  text-transform: uppercase;
+}
+
+.copyBtn {
+  background-color: #d7d8df;
+  color: #f8f8f2;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}

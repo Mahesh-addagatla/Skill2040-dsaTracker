@@ -10,6 +10,23 @@ import PrivateRoute from "./pages/auth/PrivateRoute";
 import Dashboard from "./pages/auth/Dashboard";
 import Login from "./pages/auth/Login";
 import Leaderboard from "./pages/profile/components/leaderboard/Leaderboard";
+import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ContributionBoard from './pages/contibutionboard/ContributionBoard';
+import Solution from './pages/solution/Solution';
+import Home from './pages/home/Home';
+import Settings from './pages/settings/Settings';
+import Signup from './pages/auth/Signup';
+import { AuthProvider } from './pages/auth/AuthContext';
+import PrivateRoute from './pages/auth/PrivateRoute';
+import Dashboard from './pages/auth/Dashboard';
+import Login from './pages/auth/Login';
+import AddNotes from './components/addnotes/AddNotes';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 function App() {
   return (
     <div className="App">
@@ -35,6 +52,7 @@ function App() {
           <Route path="/settings" element={<Settings />} />
         </Routes>
       </Router>
+      <ToastContainer position='top-right' style={{zIndex:9999999}}/>
     </div>
   );
 }

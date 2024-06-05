@@ -25,7 +25,6 @@
 
 .topicsComponent .available-topics,
 .topicsComponent .selected {
-
     display: flex;
     flex-wrap: wrap;
 }
